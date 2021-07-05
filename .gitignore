@@ -1,0 +1,18 @@
+# LaTeX files
+*.aux
+*.log
+*.toc
+*.bbl
+*.run.xml
+*.out
+*.bcf
+*.blg
+*.nav
+*.snm
+*.fdb_latexmk
+*.fls
+
+# Project specific files.
+main.pdf
+main.synctex.gz
+
