@@ -1,0 +1,179 @@
+\section{Future works}
+
+\begin{frame}[plain]
+   \sectionpage
+\end{frame}
+
+\frame{
+   \frametitle{Proposed schedule}
+
+   \begin{table}[H]
+      \centering
+      \scriptsize
+      \begin{tabular}{lccccccc}
+         \toprule
+         Item & Jan & Feb & Mar & Apr & May & Jun & Jul\\
+         \midrule
+         1. BRKGA for other datasets & & & & x \\
+         \midrule
+         2. Journal article \\
+         \phantom {2.} 2.1 BRKGA-MP-IPR & &x & x & x &  &  & \\
+         \phantom {2.} 2.2 SP/MWIS heuristics & & &  & x & x & x &x \\
+         \midrule
+         3. New lower bounds\\
+         \phantom{3. } 3.1 Additional cuts & & & x & x \\
+         \phantom{3. } 3.2 VRPSolver & x & & & x & x & x\\
+         \midrule
+         4. Route recombination heuristics\\
+         \phantom{4. } 4.1 With set partitioning & & & x & x & x & x\\
+         \phantom{4. } 4.2 With maximum weighted IS & & & x & x & x & x\\
+         \midrule
+         5. HHCRSP in Porto Alegre\\
+         \phantom{5.} 5.1 New instance dataset & x  & & & x & x & x\\
+         \phantom{5.} 5.2 Adaption of methods & & & & && x & x \\
+         \phantom{5.} 5.3 Simple heuristics  & & & & && x & x \\
+         \midrule
+         6. Thesis writing & & x & x & x & x & x & x \\
+         \bottomrule
+      \end{tabular}
+   \end{table}
+}
+
+\frame{
+   \frametitle{Current schedule}
+
+   \begin{table}[H]
+      \centering
+      \scriptsize
+      \begin{tabular}{lccccccc}
+         \toprule
+         Item & Jan & Feb & Mar & Apr & May & Jun & Jul\\
+         \midrule
+         \color{InfRed} 1. BRKGA for other datasets & & & & x & \textbf{x} \\
+         \midrule
+         \color{InfRed} 2. Journal article \\
+         \color{InfRed} \phantom {2.} 2.1 BRKGA-MP-IPR & &x & x & x &  &  & \\
+         \phantom {2.} 2.2 SP/MWIS heuristics & & &  & x & x & x &x \\
+         \midrule
+         3. New lower bounds\\
+         \phantom{3. } \sout{3.1 Additional cuts} & & & x & x \\
+         \color{InfRed} \phantom{3. } 3.2 VRPSolver & x & & & x & x & x\\
+         \midrule
+         \color{InfRed} 4. Route recombination heuristics\\
+         \color{InfRed} \phantom{4. } 4.1 With set partitioning & & & x & x & x & x\\
+         \color{InfRed} \phantom{4. } 4.2 With maximum weighted IS & & & x & x & x & x\\
+         \midrule
+         5. HHCRSP in Porto Alegre\\
+         \color{InfRed} \phantom{5.} 5.1 New instance dataset & x  & & & x & x & x\\
+         \phantom{5.} 5.2 Adaption of methods & & & & && x & x \\
+         \phantom{5.} 5.3 Simple heuristics  & & & & && x & x \\
+         \midrule
+         \color{InfRed} 6. Thesis writing & & x & x & x & x & x & x \\
+         \bottomrule
+      \end{tabular}
+   \end{table}
+}
+
+\frame{
+   \frametitle{Current schedule}
+
+   \textbf{2.1 BRKGA-MP-IPR}
+   \begin{itemize}
+      \item Article is almost finished
+      \item Small adjusts in the formatting
+   \end{itemize}
+
+   \vspace{12pt}
+   \textbf{Estimated completion:} week 18 (May, 7)
+}
+
+\frame{
+   \frametitle{Current schedule}
+
+   \textbf{1. BRKGA for other datasets}
+   \begin{itemize}
+      \item Additional instance features
+      \item Dataset from \citet{bredstrom2008}
+      \item Dataset from \citet{rasmussen2012}
+   \end{itemize}
+
+   \vspace{12pt}
+   \textbf{Estimated completion:} week 19 (May, 14)
+}
+
+\frame{
+   \frametitle{Current schedule}
+
+   \textbf{3.2 VRPSolver}
+   \begin{itemize}
+      \item A Branch-and-Cut-and-Price based exact solver for routing-like problems
+      \item Proposed by \citet{pessoa2020}
+      \item Can be used as a Julia library
+   \end{itemize}
+
+   \vspace{12pt}
+   \textbf{Estimated completion:} week 21 (May, 28)
+   \begin{itemize}
+      \item $\approx$ 70\% done
+      \item \onlyh{2}{InfRed}{No support to synchronization constraints}
+      \item \onlyh{2}{InfRed}{No support to soft time-windows}
+      \item Optimal solutions to the VRPTW: combinatorial lower bounds \citep{uma2006}
+   \end{itemize}
+}
+
+\frame{
+   \frametitle{Current schedule}
+
+   \textbf{4. Route recombination heuristics}\\
+   \textbf{2.2 SP/MWIS heuristic paper}
+   \begin{itemize}
+      \item Try to find improved solutions from a \textit{pool} of routes
+      \item Adjustments of visits times (operations synchronization)
+   \end{itemize}
+
+   \vspace{12pt}
+   \textbf{Estimated completion:} week 21 (May, 28)
+   \begin{itemize}
+      \item $\approx$ 30\% done
+      \item BRKGA $\Rightarrow$ to generate routes
+      \item A SP-based model to combine the routes
+      \item CPLEX to solve SP
+   \end{itemize}
+}
+
+\frame{
+   \frametitle{Current schedule}
+
+   \textbf{5.1. New instance dataset}
+   \begin{itemize}
+      \item Porto Alegre does not save historical data of past months of HHC services
+      \item Our proposal: generate instances similar to the real ones
+      \item Approach similar to \citet{sartori2020-pdptw}
+   \end{itemize}
+
+   \vspace{12pt}
+   \textbf{Estimated completion:} week 22 (June, 4)
+   \begin{itemize}
+      \item With the \textit{ovig} library: $\approx$ 50\% done
+      \item Pending visit to the operations center of Porto Alegre
+      \item Tomorrow: meeting with the software developers responsible for Porto Alegre city hall systems
+   \end{itemize}
+}
+
+\frame{
+   \frametitle{Current schedule}
+
+   \textbf{5.2. Adaption of methods}\\
+   \textbf{5.3. Simple heuristics}
+   \begin{itemize}
+      \item Adapt ou solution methods to the new instance dataset
+      \item Propose simple heuristics
+      \item \textcolor{InfRed}{Uncertainty}
+   \end{itemize}
+
+   \vspace{12pt}
+   \textbf{Estimated completion:} week 26 (July, 2)
+   \begin{itemize}
+      \item Effort depends upon features of the new instance dataset
+   \end{itemize}
+}

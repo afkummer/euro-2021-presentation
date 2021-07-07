@@ -1,0 +1,529 @@
+\section{Preliminary results}
+
+\begin{frame}[plain]
+   \sectionpage
+\end{frame}
+
+
+\frame{
+   \frametitle{Instance dataset}
+
+   \textbf{\citet{mankowska2014} dataset}
+   \begin{itemize}
+      \item Total of 70 instances available
+      \item Seven instance subsets, from A to G
+      \item Euclidean distances
+      \item Time-windows of 2 hours % within a 10 hour planning horizon
+   \end{itemize}
+
+   \vspace*{12pt}
+
+   \textbf{Service types}
+   \begin{itemize}
+      \item Fixed $\Sk = \{1, 2, 3, 4, 5, 6\}$
+      \item A caregiver can perform up to 3 service types
+      \item 70\% of single service patients
+      \item 30\% of double services
+   \end{itemize}
+}
+
+\frame{
+   \frametitle{Instance dataset}
+
+   \textbf{\citet{mankowska2014} dataset}
+
+   \begin{table}[H]
+      \centering
+      \footnotesize
+      \begin{tabular}{lrrrrr}
+         \toprule
+         Instance subset & $|\mathcal{V}|$ & $|\mathcal{C}|$ &
+         Avg. cols$^*$ \\
+         \toprule
+         A &  3 &  10 &      2,445 \\
+         B &  5 &  25 &     21,219 \\
+         C & 10 &  50 &    159,429 \\
+         D & 15 &  75 &    527,139 \\
+         E & 20 & 100 &  1,236,846 \\
+         F & 30 & 200 &  7,309,566 \\
+         G & 40 & 300 & 21,818,286 \\
+         \midrule
+         \multicolumn{4}{c}{Total of instances: 70}\\
+         \bottomrule
+      \end{tabular}
+   \end{table}
+
+   \vspace*{12pt}
+
+   Ten instances for each subset.
+
+%   $^*$With preprocessing to skip generation of variables trivially set to 0.
+}
+
+%\frame{
+%   \frametitle{Benchmark machine}
+%
+%   \textbf{With the F\&O \textit{matheuristic}, and BRKGA}
+%   \begin{itemize}
+%      \item CPLEX 12.9
+%      \item Intel Core i7 3612QM at 3.1 GHz
+%      \item 8 GB of memory
+%      \item Single thread processing
+%   \end{itemize}
+%
+%   \vspace*{12pt}
+%
+%   \textbf{With the BRKGA-MP-IPR, and LB$^+$ experiment}
+%   \begin{itemize}
+%      \item CPLEX 20.10
+%      \item Intel Core i7 930 at 2.8 GHz
+%      \item 12 GB of memory
+%      \item Single thread processing (CPLEX)
+%      \item Parallel decoding with 4 threads (BRKGA)
+%   \end{itemize}
+%}
+
+%\frame{
+%   \frametitle{Previous results from the literature}
+%
+%   \textbf{MIP and MH \citep{mankowska2014}}
+%   \begin{itemize}
+%      \item CPLEX (mostly) for providing lower bounds
+%      \item Initial solutions: nearest neighbor heuristic
+%      \item Solution structure: three-indexed matrix
+%      \item LS operators: (inter, intra)-route $\times$ (swap, shift)
+%      \item Specialized operators for single and double services
+%      \item Simple LS, and the Adaptive VNS
+%      \item \textit{Best improvement} with a MN heuristic
+%      \item \textit{Best improvement} in adaptive phase of VNS
+%   \end{itemize}
+%}
+%
+%\frame{
+%   \frametitle{Previous results from the literature}
+%
+%   \textbf{Meta-heuristics \citet{lasfargeas2019}}
+%   \begin{itemize}
+%      \item Originally proposed for the short-term HHCP
+%      \item Several variations of the constructive heuristic
+%      \item Repeated construction with randomization
+%      \item Operators: equivalent to shif and swap operators from \citet{mankowska2014}, but only single service operators
+%      \item Randomizes the choice of patients to shift/swap
+%      \item But the operator order is also fixed
+%      \item \textit{First improvement} is used within the VNS algorithm
+%      \item Results for instances with up to 75 patients
+%   \end{itemize}
+%}
+
+\frame{
+   \frametitle{\footnotesize Previous results from the literature}
+
+   \textbf{MIP and MH \citep{mankowska2014}}
+   \begin{itemize}
+      \item CPLEX (mostly) for providing lower bounds
+      \item Several LS-based heuristics, and a VNS-based algorithm
+      \item Specialized operators for single and double services
+%      \item Nearest neighbor-like constructive heuristic
+   \end{itemize}
+}
+
+\frame{
+   \frametitle{\footnotesize Previous results from the literature}
+
+   \textbf{Meta-heuristics of \citet{lasfargeas2019}}
+   \begin{itemize}
+%      \item Repeated construction with randomization
+      \item VNS-based metaheuristic
+      \item Similar operators than \citet{mankowska2014}
+      \item Randomizes the choice of patients to shift/swap
+%      \item \textit{First improvement} acceptance
+%      \item Results for instances with up to 75 patients
+   \end{itemize}
+}
+
+%\frame{
+%   \frametitle{Environmental setup}
+%
+%   \textbf{Speed factor between machines}
+%   \begin{itemize}
+%      \item Too many experiments to replicate
+%      \item Many implementation details left off
+%      \item Alternative approach: use published results
+%      \item But we first need to estimate the speed factor among the distinct benchmark machines
+%   \end{itemize}
+%
+%   \vspace*{12pt}
+%
+%   \begin{table}[H]
+%      \centering
+%      \scriptsize
+%      \setlength{\tabcolsep}{2.5pt}
+%      \renewcommand{\arraystretch}{1.1}
+%      \begin{tabular}{llrr}
+%         \toprule
+%         Publication & Machine description & PassMark score & Factor\\
+%         \midrule
+%         \citet{mankowska2014} & Intel Core at 3.40 GHz & 1884 & 1.4270\\
+%         \citet{lasfargeas2019} & Intel i7 at 4.00 GHz & 2528 & 1.9750\\
+%         F\&O & Intel i7-3612QM at 3.10 GHz & 1484 & 1.1559\\
+%         BRKGA & Intel i7-3612QM at 3.10 GHz & 1484 & 1.1559\\
+%         BRKGA-MP-IPR & Intel i7-930 at 2.80 GHz & 1280 & 1.0000\\
+%         \bottomrule
+%      \end{tabular}
+%   \end{table}
+%}
+
+\frame{
+   \frametitle{Outline}
+
+   \begin{enumerate}
+      \item \onlyh{2}{InfRed}{New lower bounds with CPLEX 20.10}
+      \item New upper bounds from BRKGA and BRKGA-MP-IPR
+      \item Comparison with the literature
+      \item New upper bounds with the MIP
+   \end{enumerate}
+}
+
+\frame{
+   \frametitle{New lower bounds with CPLEX 20.10}
+
+   \bgroup
+   \begin{table}[!htb]
+      \scriptsize
+      \setlength{\tabcolsep}{2.5pt}
+      \renewcommand{\arraystretch}{1.1}
+      \centering
+      \begin{tabular}{lrrrrrr}
+         \toprule
+         \multirow{2}[2]{*}{Instance} &
+         \multicolumn{2}{c}{Previous values} &
+         \multicolumn{4}{c}{New values} \\
+
+         \cmidrule(l){2-3}
+         \cmidrule(l){4-7}
+
+         & LB$^+$ & Time (sec.)
+         & LB$^+$ & Time (sec.) & Improv. (\%)
+         & \# Nodes \\
+         \midrule
+
+         A & \textbf{225.2} & 5.2 & \textbf{225.2} & 1.0 & 0.0 & 846 \\
+         B & 343.1 & 36,000.0 & \textbf{386.0} & 4408.2 & 13.3 & 1,129,013 \\
+         C & 342.6 & 36,000.0 & \textbf{403.5} & 7200.0 & 17.7 & 48,480  \\
+         D & 377.4 & 36,000.0 & \textbf{411.7} & 7200.0 & 9.0 & 5,808  \\
+         E & 404.5 & 36,000.0 & \textbf{418.1} & 7200.0 & 3.4 & 654   \\
+         \midrule
+         F & 435.3 & 36,000.0 & \textbf{528.6} & 7200.2 & 21.9 & 507   \\
+         G & 462.1 & 36,000.0 & \textbf{604.3} & 7200.6 & 30.8 & 302  \\
+         \midrule
+         & 370.0 & 30857.9 & 425.4 & 5772.9 & 13.7 & 169372.8\\
+         \bottomrule
+      \end{tabular}
+   \end{table}
+   \egroup
+
+   \vspace*{12pt}
+
+   Initial solutions from BRKGA \citep{kummer2020}.
+}
+
+\frame{
+   \frametitle{Outline}
+
+   \begin{enumerate}
+      \item \onlyh{1}{InfRed}{New lower bounds with CPLEX 20.10}
+      \item \onlyh{2,3}{InfRed}{New upper bounds from BRKGA and BRKGA-MP-IPR}
+      \only<2->{
+      \begin{enumerate}
+         \item \onlyh{3}{InfRed}{Automatic algorithm configuration}
+         \item Computational results
+      \end{enumerate}
+      }
+      \item Comparison with the literature
+      \item New upper bounds with the MIP
+   \end{enumerate}
+}
+
+
+\frame{
+   \frametitle{Calibrating the BRKGA}
+
+   \textbf{Highly parameterized heuristics}
+   \begin{itemize}
+      \item BRKGA has five parameters
+      \item Island models: +3
+      \item New parameters for MP: +3
+      \item IPR: +5
+      \item Stagnated generations before reset +1
+
+      \item \textbf{Total: 17 parameters}
+   \end{itemize}
+}
+
+\frame{
+   \frametitle{Calibrating the BRKGA}
+
+   \textbf{Automatic algorithm configuration with \emph{irace}}
+   \begin{itemize}
+      \item R package, easy to use \emph{front-end}
+      \item Stopping criteria $\Rightarrow$ \emph{budget}, or time limit
+      \item A parameter space specification
+%      \item Rules for forbidden configurations
+      \item A set of train instances
+   \end{itemize}
+
+   \vspace*{12pt}
+
+   \textbf{Advantages over manual configuration}
+   \begin{itemize}
+      \item Prevent human errors and bias
+      \item Robust experiment
+   \end{itemize}
+
+   \color{InfRed} Starting point for newcomers: \citet{lopez2016} for irace guidance, \citet{eggensperger2019-aac-best-practices} for general advice
+}
+
+%\frame{
+%   \frametitle{Calibrating the BRKGA}
+%
+%   \textbf{\emph{irace} for BRKGA}
+%   \begin{itemize}
+%      \item Parameters: 5
+%      \item Budget: 5,000 runs
+%      \item Train instances: C subset (50 patients, 10 caregivers)
+%      \item Total time spent: $\approx{}$ 3 days
+%   \end{itemize}
+%
+%   \vspace*{12pt}
+%
+%   \textbf{\emph{irace} for BRKGA-MP-IPR}
+%   \begin{itemize}
+%      \item Parameters: 17
+%      \item Budget: 1,500 runs
+%      \item Train instances: G subset (300 patients, 40 caregivers)
+%      \item Total time spent: $\approx{}$ 3 days
+%   \end{itemize}
+%}
+
+\frame{
+   \frametitle{Outline}
+
+   \begin{enumerate}
+      \item New lower bounds with CPLEX 20.10
+      \item \onlyh{1-}{InfRed}{New upper bounds from BRKGA and BRKGA-MP-IPR}
+      \begin{enumerate}
+         \item \onlyh{1}{InfRed}{Automatic algorithm configuration}
+         \item \onlyh{2}{InfRed}{Computational results}
+      \end{enumerate}
+      \item Comparison with the literature
+      \item New upper bounds with the MIP
+   \end{enumerate}
+}
+
+
+\frame{
+   \frametitle{Comparison of results}
+
+   \begin{itemize}
+      \item 15 runs for each instance
+%      \item BRKGA: \citep{kummer2020}
+%      \item BRKGA-MP-IPR: ongoing write
+   \end{itemize}
+
+   \begin{table}[H]
+      \tiny
+      \centering
+      \setlength{\tabcolsep}{3pt}
+      \begin{tabular}{lrrrrrrrr}
+         \toprule
+
+         \multirow{2}[2]{*}{Instance} &
+         \multirow{2}[2]{*}{LB$^+$} &
+         \multicolumn{3}{c}{BRKGA} &
+         \multicolumn{4}{c}{BRKGA-MP-IPR}\\
+
+         \cmidrule(lr){3-5}
+         \cmidrule(lr){6-9}
+
+         & &
+         Cost & Gap (\%) & Time (sec) &
+         Cost & Gap (\%) & Improv. (\%) & Time (sec)\\
+
+
+
+         \midrule
+
+
+         A & 225.2 & \textbf{227.5} & \textbf{1.0} & 2.7 & \textbf{227.5} & \textbf{1.0} & 0.0 & 97.7 \\
+         B & 386.0 & \textbf{413.9} & \textbf{6.7} & 10.3 & \textbf{413.9} & \textbf{6.7} & 0.0 & 105.4 \\
+         C & 403.5 & 629.1 & 35.9 & 43.5 & \textbf{627.0} & \textbf{35.6} & -0.4 & 130.7 \\
+         D & 411.7 & 792.2 & 48.0 & 109.6 & \textbf{783.9} & \textbf{47.5} & -1.1 & 165.9 \\
+         E & 418.1 & 846.1 & 50.6 & 211.3 & \textbf{829.0} & \textbf{49.6} & -2.0 & 219.8 \\
+         F & 528.6 & 1278.1 & 58.6 & 899.6 & \textbf{1232.3} & \textbf{57.1} & -3.6 & 577.2 \\
+         G & 604.3 & 1709.7 & 64.7 & 2214.0 & \textbf{1632.7} & \textbf{63.0} & -4.5 & 1228.5 \\
+         \midrule
+         & 425.3 & 842.4 & 37.9 & 498.7 & \textbf{820.9} & \textbf{37.2} & -1.7 & 360.7\\
+         \bottomrule
+      \end{tabular}
+   \end{table}
+}
+
+\frame{
+   \frametitle{Outline}
+
+   \begin{enumerate}
+      \item New lower bounds with CPLEX 20.10
+      \item \onlyh{1}{InfRed}{New upper bounds from BRKGA and BRKGA-MP-IPR}
+      \begin{enumerate}
+         \item Automatic algorithm configuration
+         \item \onlyh{1}{InfRed}{Computational results}
+      \end{enumerate}
+      \item \onlyh{2}{InfRed}{Comparison with the literature}
+      \item New upper bounds with the MIP
+   \end{enumerate}
+}
+
+\frame{
+   \frametitle{Comparison of results}
+
+   \begin{itemize}
+      \item Fix and Optimize: single run
+%      \item BRKGA-MP-IPR: 15 runs
+   \end{itemize}
+
+\begin{table}[H]
+   \tiny
+   \setlength{\tabcolsep}{3pt}
+%   \renewcommand{\arraystretch}{1.13}
+   \begin{tabular}{lrrrrrrrrrrrrrrrrrr}
+
+
+      \toprule
+      \multirow{2}[2]{*}{Instance} &
+      \multirow{2}[2]{*}{LB$^+$} &
+      \multicolumn{3}{c}{MK} &
+      \multicolumn{3}{c}{LF} &
+      \multicolumn{3}{c}{F\&O} &
+      \multicolumn{3}{c}{BRKGA-MP-IPR}
+      \\
+
+      \cmidrule(lr){3-5}
+      \cmidrule(lr){6-8}
+      \cmidrule(lr){9-11}
+      \cmidrule(lr){12-14}
+
+      & & Cost  & Gap & Time
+      & Cost & Gap &   Time
+      & Cost & Gap  & Time
+      & Cost  & Gap &  Time
+      \\
+      \midrule
+
+      A& 225.2 & \textbf{225.2} & 0.0 &  7.7 & \textbf{225.2} & 0.0  &  1.0 & \textbf{225.2} & 0.0 & 0.5 & 227.5 & 1.0  & 97.7 \\
+
+      B& 386.0 & 445.4 & 13.3 &  26,494.3 & \textbf{411.2} & 6.1 &  94.8 & 426.5 & 9.5 & 102.2 & 413.9 & 6.7 &  105.4 \\
+
+      C& 403.5 & 713.2 & 43.4 &  1.0 & 636.2 & 36.6 &  215.3 & 646.3 & 37.6 & 475.6 & \textbf{627.0} & 35.6 & 130.7 \\
+
+      D& 411.7 & 928.6 & 55.7 &  6.8 & 854.0 & 51.8 &  309.6 & 853.0 & 51.7 & 1113.3 & \textbf{783.9} & 47.5 &165.9 \\
+
+      E& 418.1 & 1057.6 & 60.5 &  24.4 & -- & -- &  -- & 966.1 & 56.7 & 4101.3 & \textbf{829.0} & 49.6 & 219.8 \\
+
+      F& 528.6 & 1588.0 & 66.7 &  1641.7 & -- & -- &   -- & -- & -- & -- & \textbf{1232.3} & 57.1 & 577.2 \\
+
+      G& 604.3 & 2161.2 & 72.0 &  10,495.5 & -- & -- &   -- & -- & -- & -- & \textbf{1632.7} & 63.0 &  1228.5 \\
+
+      \midrule
+      & 425.3 & 1017.0 & 44.5 & 5524.5 & 531.7 & 23.6 & 155.2 & 623.4 & 31.1 & 1158.6 & 820.9 & 37.2 & 360.7\\
+
+      \bottomrule
+   \end{tabular}
+\end{table}
+}
+
+\frame{
+   \frametitle{Outline}
+
+   \begin{enumerate}
+      \item New lower bounds with CPLEX 20.10
+      \item New upper bounds from BRKGA and BRKGA-MP-IPR
+      \begin{enumerate}
+         \item Automatic algorithm configuration
+         \item Computational results
+      \end{enumerate}
+      \item \onlyh{1}{InfRed}{Comparison with the literature}
+      \item \onlyh{2}{InfRed}{New upper bounds with the MIP}
+   \end{enumerate}
+}
+
+
+\frame{
+   \frametitle{Comparison of results}
+
+   \textbf{New upper bounds while LB$^+$ experiment}
+   \begin{itemize}
+      \item New BKV for 9 instances from subset B
+      \item New BKV for all instances from subset C
+      \item New BKV for 3 instances from subset D
+   \end{itemize}
+
+   \begin{table}[H]
+
+      \centering
+      \footnotesize
+      \begin{tabular}{lrrrrr}
+         \toprule
+         \multirow{2}[1]{*}{Instance } &
+         \multicolumn{5}{c}{Optimal solutions} \\
+         \cmidrule{2-6}
+
+         & LB$^+$ & Initial (obj) & Final (obj) & Time (sec.) & Gap (\%)
+         \\
+         \midrule
+         B1 & 428.1 & 428.6 & \textbf{428.1} & 5970.3 & 0.0 \\
+         B2 & 476.0 & 483.6 & \textbf{476.0} & 469.5 & 0.0 \\
+         B4 & 411.3 & 432.2 & \textbf{411.3} & 509.9 & 0.0 \\
+         B7 & 328.6 & 328.7 & \textbf{328.7} & 598.7 & 0.0 \\
+         B8 & 357.6 & 359.7 & \textbf{357.7} & 533.7 & 0.0 \\
+         \bottomrule
+      \end{tabular}
+   \end{table}
+
+%   \begin{tikzpicture}[overlay]
+%      \node<2>[rectangle, fill=green, anchor=south, text=black] at (5.65,1.2) {\scriptsize $\approx 5.84\%$};
+%   \end{tikzpicture}
+
+}
+
+\subsection*{Published results}
+
+\frame{
+   \frametitle{Articles and awards}
+
+   \textbf{Fix-and-optimize \emph{matheuristic}}
+   \begin{itemize}
+      \item SBPO: \citet{neto2019}
+      \item Roberto Diéguez Galvão: best symposium paper (2019)
+   \end{itemize}
+
+   \vspace*{12pt}
+
+   \textbf{BRKGA}
+   \begin{itemize}
+      \item GECCO'20: \citet{kummer2020}
+   \end{itemize}
+
+   \vspace*{12pt}
+
+   \textbf{EURO 2021 Athens:}
+   \begin{itemize}
+      \item Accepted abstract!
+   \end{itemize}
+
+   \vspace*{12pt}
+
+   \textbf{BRKGA-MP-IPR:}
+   \begin{itemize}
+      \item To be submitted
+   \end{itemize}
+}

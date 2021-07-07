@@ -1,0 +1,120 @@
+\section{Related works}
+
+\begin{frame}[plain]
+   \sectionpage
+\end{frame}
+
+
+\frame{
+   \frametitle{Literature outline}
+
+   \textbf{In general}
+   \begin{itemize}
+      \item Most publications approach \emph{only} the routing problem \citep{gutierrez2013,grieco2020}
+      \item Three surveys on routing problems arriving HHCP: \citet{fikar2017}, \citet{cisse2017}, and \citet{grieco2020}
+      \item This is also the case of this thesis proposal
+   \end{itemize}
+}
+
+\frame{
+   \frametitle{Literature outline}
+
+   \textbf{HHC involves much more than routing and scheduling}
+   \begin{itemize}
+      \item Placement of operation centers
+      \item Choice of health and social services offered
+      \item Staffing and supplier selection
+      \item Fleet assignment and staff routing
+      \item Inventory management
+   \end{itemize}
+
+    \vspace*{12pt}
+
+   \textbf{Lots of similarities with supply chain and task workforce problems \citep{ballou2007,castillo2016}}
+%   \begin{itemize}
+%      \item Strategical planning
+%      \item Tactical planning
+%      \item Operational planning
+%   \end{itemize}
+}
+
+\frame{
+   \frametitle[plain]{Literature outline}
+
+   \begin{center}
+      \begin{adjustbox}{width=0.6\textwidth}
+
+      \begin{tikzpicture}[mindmap, grow cyclic, every node/.style=concept, concept color=orange!40,
+      level 1/.append style={level distance=5cm,sibling angle=120},
+      level 2/.append style={level distance=3cm,sibling angle=45}]
+
+         \node{  Home Health Care Problem}
+         child [concept color=purple!50] { node {  Operational planning}
+            child { node {Visit scheduling}}
+            child { node {Staff routing}}
+            child { node {Inventory control}}
+         }
+         child [concept color=teal!40] { node {  Tactic planning}
+            child { node {Admission control}}
+            child { node {Fleet assignment}}
+            child { node {Staff allocation}}
+            child { node {Temporary staff}}
+         }
+         child [concept color=blue!30] { node { Strategic planning}
+            child { node {Facility location}}
+            child { node {Districting}}
+            child { node {Service type coverage}}
+            child { node {Staffing}}
+            child { node {Supplier selection}}
+            child { node {Fleet assignment}}
+         };
+      \end{tikzpicture}
+      \end{adjustbox}
+      \\[2pt]
+      \footnotesize
+      Source: based on the work of \citet{gutierrez2013}.
+   \end{center}
+}
+
+\frame{
+   \frametitle{Operational planning for the HHCP}
+
+   \textbf{Basic definition as a routing problem}
+   \begin{itemize}
+%      \item \citet{fernandez1974} studied the problem through statistics
+      \item Model introduced by \citet{cheng1998}
+%      \item Generalization of vehicle routing problem with time-windows \citep{akjiratikarl2007}
+      \item Travel times between all pairs of locations
+      \item Service times, patients time-windows
+   \end{itemize}
+
+}
+
+
+
+\frame{
+   \frametitle{Operational planning for the HHCP}
+
+   \textbf{Also a rich research subtopic}
+   \footnotesize
+   \begin{itemize}
+      \item Planning horizon length
+      \item Working regulations
+      \item {Preferences}
+      \item {Uncertainty}
+      \item Multiple services types
+      \item Multiple visits, operations synchronization
+      \item \citet{fikar2017}, \citet{cisse2017}, \citet{grieco2020}
+   \end{itemize}
+   \normalsize
+
+   \vspace*{12pt}
+
+   \textbf{Integrated approaches}
+   \footnotesize
+   \begin{itemize}
+      \item Fluctuation demands and temporary hiring \citep{eveborn2006}
+      \item Fleeting and operational planning \citep{fikar2018}
+   \end{itemize}
+   \normalsize
+}

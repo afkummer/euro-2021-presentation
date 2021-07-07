@@ -1,0 +1,117 @@
+# Brainstorm
+
+- Historical reference
+- First care and home hospitalization
+- Social care
+- Taxonomy
+- Planning horizon
+- Preferences
+- Working regulations
+- Tactical, strategical, operational
+- Brazilian needs
+   - Multi-disciplinary team
+   - Usually composed by a driver + licensed healthcare professional + an intern + a nurse
+   - Total of 19 fix teams
+   - There are some additional supporting teams (**Q**: equipes de apoio contam por fora dessas 19? E servem para coleta?)
+   - Support teams usually composed by tecnician + driver only
+   - The manual approach
+      - Selects which patient is visited by each team, by someone with knowledge of the city
+      - Then start the routes on the nearest patient
+      - The next in the sequence is chosen according nearest neighborhood
+      - There is also the need of collecting material
+      - Drug administration
+      - Some of these tasks may require simultaneous attendance
+      - **Q**: Quando tem coleta, precisa voltar imediatamente para a central?
+   - **Q**: Veículos são compartilhados, quando uma equipe termina de usar, libera para outra.
+   - **Q**: Equipamentos também precisam ser carregados quando uma equipe ocupa um carro
+   - Motivation for HHC services
+   - Brazilian population growth and aging
+   - CoVID19
+      - Testing
+      - Vaccination
+      - Currently: by walking, drive-thru (most cases)
+      - Coordinated effort of public and private facilities
+         - But all vaccines are aquired through SUS
+      - On some capitais: vaccination-at-home, solutions ad-hoc
+         - Refence to uMov-me service, and Circuit (APP)
+- Scope of the search based on the Brazilian needs
+   - Routingh problem (Cheng and Rich [98])
+- Routing in HC is a rich research subtopic
+   - Planning horizon length
+   - Regulations
+   - Preferences
+   - Multiple visits
+   - Uncertainty
+- Operational can also help dimensioning the strategical (??) planning:
+   - what happens if the number of patients grows from 15 to 50?
+- Research methodology: seek for a problem similar to the one from porto alegre
+- Mankowska work
+   - Routing component
+   - Time windows
+      - In porto alegre, usually the patient only knows the day, or the shift where the visit will happen
+   - Service types
+      - In PoA, a set most demanding key services are offered to some patients in HC modality
+      - **Q**: PoA faz primeiro atendimento ou hospitalização domiciliar? Tem alguns exemplos do que são os serviços cobertos pelas equipes?
+   - Synchronization
+      - PoA requires simultaneous DS between the fixed and support teams ??
+         - ??then the teams return to the central with blood samples, etc?
+
+- Model-based approaches
+   - LB (scientific purposes)
+   - MIP (only small instances)
+   - Fix-and-optimize matheuristic
+
+- Meta-heuristic approaches
+   - Literature on these problems often explores LS-based heuristics
+      - There are some properties from VRPTW that can be applied to reduce the work of evaluating a neighborhood
+      - Synchronization make things a bit more unpredictable
+         - Movements can be expensive to evaluate
+            - Specialized structures to represent the solution (MK)
+            - Attempts to develop more "clever" solution structures
+               - Have to deal with cross-synchronizations
+            - Indirect representation of the solutions: our approach
+
+- During LB experiments
+   - We have the MIP -> LB, or best LB from B&C search
+   - Combinatorial relaxation of the problem
+      - Drop synchronization constraints, and solve a VRPTW
+      - Using the VRPSolver -> optimal solutions are consistently worse than the LB and LB+
+         - Conclusion: the impact of synchronized visits is to important that even a powerful tool like VRPSolver is of low value
+         - Additionally, it is hard to devise column generation algorithms in presence of the synchronization
+            - Pricing needs to be able to adjust the service times according duals from synch of the master
+            - Discussed by van den Akker, Rasmussen and Bredstrom
+
+- We are in contact with the managers of HHC in PoA
+   - The head has interest on the optimization opportunities
+   - Our proposal is to work into the optimization kernel, as a counterpart, the public power would develop the infra required for the implementation of the tool
+   - Due to the pandemic: all schedules got tight
+   - No teams available in short notice for collaborating with us
+   - Then we changed our plans:
+      - Propose the implementation of the tool interface as a research project for some undergraduating student
+      - Generate realistic instances for the case of porto Alegre
+
+- Generation of realistic instances
+   - Simulate the behavior of the daily demands for home healthcare
+   - Realistic patient locations through the open addresses database
+   - Realistic travel times
+      - Google Maps has several limitations under the free modality
+      - Alternative approach: using OpenStreetMaps and OpenSourceRoutingMachine
+   - This tools have already been combined together by my reaseach fellow for VRPTW, CVRP, and PDPTW
+   - So we need to implement a few changes to be able to generate instances for the HHC
+   - Currently to check how well our proposed methods work on these daily instances
+   - Can be extended for generating data within a time frame of a week
+
+
+
+# Questões para o Kallil
+
+1. Em uma das nossas reuniões, tomei nota que há 19 equipes trabalhando no atendimento residêncial. Também tomei nota que existem equipes de suporte. Essas equipes de suporte já estão contabilizadas no total das 19? Além disso, equipe de suporte só auxilia na administração de medicamentos e coleta de material?
+
+2. Quando um material é coletado, a equipe pode armazenar esse material no carro até o final dos atendimentos? Isso tem impacto no número de atendimentos que a equipe faz? Fico pensando se uma equipe de suporte poderia ser utilizada para fazer o transporte desse material. Outra opção é que os atendimentos com coleta sejam feitos mais para o final dos trabalhos das equipes, assim o tempo de armazenamento poderia ser reduzido. Tu poderia fazer algum detalhamento a respeito disso?
+
+3. Recordo que o número de veículos disponíveis é menor que o número total de equipes. Pelas minhas notas, algumas equipes só começam as operações após uma outra terminar as suas e retornar para a central. É assim mesmo que funciona?
+
+4. Considerando as operações diárias de uma equipe, qual seria o número médio de atendimentos por equipe, em termos de pacientes atendidos? A literatura trabalha com um valor de 5 a 8 pacientes diários por equipe, dependendo da complexidade, distância entre pacientes, e duração dos atendimentos.
+
+5. Seria possivel dar alguns exemplos de serviços oferecidos por home care?
+
