@@ -5,16 +5,90 @@
 \end{frame}
 
 \begin{frame}
+   \frametitle{Home Care in Porto Alegre}
+
+   \vspace*{8pt}
+
+   \textbf{Pilot program ``Better in Home''}
+   \footnotesize
+   \begin{itemize}
+      \item Provides home hospitalization
+      \item Motivation: population growth and aging
+      \item 19 ``official'' teams
+      \item Additional support teams
+   \end{itemize}
+
+   \begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.15]{fig/melhor-em-casa.png}
+      \caption{Source: DATASUS (2021)}
+   \end{figure}
+\end{frame}
+
+\begin{frame}
+   \frametitle{Home Care in Porto Alegre}
+
+   \vspace*{8pt}
+
+   \textbf{Currently solved manually}
+   \begin{itemize}
+      \item Patient demands are set weekly
+      \item The (manual) planning done daily
+      \item First step: choice of patients of the day
+      \item Second step: patient-team assignment
+      \item Third step: individual routing by each team
+   \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+   \frametitle{Home Care in Porto Alegre}
+
+   \textbf{Additional complicating demands}
+   \begin{itemize}
+      \item Simultaneous attendance in some patients
+      \item 19 teams, but only only \textcolor{InfRed}{\bfseries X} vehicles available
+      \item Equipment needs to be carried over according teams's planning
+      \item Selection of training medical student
+   \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+   \frametitle{Home Care in Porto Alegre}
+
+   \textbf{Problem dimensions}
+   \begin{itemize}
+      \item $\approx$ 300 patients per week
+      \item 19 teams
+      \item 5 days of operation (M--F)
+      \item Volume of medical students: unknown
+   \end{itemize}
+
+   \vspace*{12pt}
+
+   \textbf{Even more complicating issues}
+   \begin{itemize}
+      \item Uncertainty with patients
+      \item Rework of the teams
+   \end{itemize}
+
+\end{frame}
+
+\begin{frame}
    \frametitle{Our target problem}
 
-   \textbf{Seeking for a \emph{core} optimization problem}
+   \textbf{Our methodology}
    \begin{itemize}
-%      \item No standard instance dataset \citep{fikar2017, grenouilleau2020}
+      \item Seeking for a \emph{core} optimization problem
       \item Complex ``enough''
       \item Not too much constrained/specific
    \end{itemize}
 
-   \vspace*{12pt}
+\end{frame}
+
+\begin{frame}
+   \frametitle{Our target problem}
 
    \textbf{The home health care routing and scheduling problem}
    \begin{itemize}
@@ -28,6 +102,18 @@
 
 %   \centering\includegraphics[width=0.9\textwidth]{img/skilled}
 
+\end{frame}
+
+\begin{frame}
+   \frametitle{Our target problem}
+
+   \textbf{On future interactions with HC managers}
+   \begin{itemize}
+      \item Uncertainty regarding attendance times
+      \item Last minute changes on the availability of patients
+      \item Current bottleneck: lack of infrastructure to interact with optimization algorithms
+      \item Export the algorithms and processes to other Brazilian cities
+   \end{itemize}
 \end{frame}
 
 \frame{
@@ -67,7 +153,7 @@
 %   \vspace*{12pt}
 
    \begin{figure}
-      \includegraphics[width=0.9\textwidth,page=7]{fig/routing-example}
+      \includegraphics[width=0.7\textwidth,page=7]{fig/routing-example}
    \end{figure}
 }
 
@@ -94,7 +180,7 @@
    \end{itemize}
 
    \begin{figure}[H]
-      \includegraphics[width=0.7\textwidth]{fig/tw-penal.pdf}
+      \includegraphics[width=0.6\textwidth]{fig/tw-penal.pdf}
    \end{figure}
 }
 
@@ -170,7 +256,7 @@
 
    \begin{figure}
       \centering
-      \includegraphics[width=0.8\textwidth,page=1]{fig/sync-tsn2}
+      \includegraphics[width=0.6\textwidth,page=1]{fig/sync-tsn2}
    \end{figure}
 \end{frame}
 
@@ -183,7 +269,7 @@
 
    \begin{figure}
       \centering
-      \includegraphics[width=0.8\textwidth,page=2]{fig/sync-tsn2}
+      \includegraphics[width=0.6\textwidth,page=2]{fig/sync-tsn2}
    \end{figure}
 \end{frame}
 
@@ -211,7 +297,7 @@
       \end{gather}
    }
 
-   \only<2-5> {
+   \only<2> {
       \begin{gather}
       \mathrm{Minimize~}\color{InfRed} \lambda_1 \normalcolor D \; +
       \color{green} \lambda_2 \normalcolor T \; +
@@ -228,12 +314,12 @@
       \item $T^\mathrm{max}$: Maximum tardiness
    \end{itemize}
 
-   \begin{tikzpicture}[overlay]
-      \draw<3>[InfRed,line width=2pt] (4.3,3.4) rectangle +(0.9, 0.7);
-      \draw<3>[InfRed,line width=2pt] (-0.4, 1.54) rectangle +(6.4, 0.7);
-      \draw<4>[InfRed,line width=2pt] (5.55,3.4) rectangle +(0.9, 0.7);
-      \draw<4>[InfRed,line width=2pt] (-0.4, 0.95) rectangle +(6.4, 0.7);
-      \draw<5>[InfRed,line width=2pt] (6.85, 3.4) rectangle +(1.3, 0.7);
-      \draw<5>[InfRed,line width=2pt] (-0.4, 0.35) rectangle +(6.4, 0.7);
-   \end{tikzpicture}
+%   \begin{tikzpicture}[overlay]
+%      \draw<3>[InfRed,line width=2pt] (4.3,3.4) rectangle +(0.9, 0.7);
+%      \draw<3>[InfRed,line width=2pt] (-0.4, 1.54) rectangle +(6.4, 0.7);
+%      \draw<4>[InfRed,line width=2pt] (5.55,3.4) rectangle +(0.9, 0.7);
+%      \draw<4>[InfRed,line width=2pt] (-0.4, 0.95) rectangle +(6.4, 0.7);
+%      \draw<5>[InfRed,line width=2pt] (6.85, 3.4) rectangle +(1.3, 0.7);
+%      \draw<5>[InfRed,line width=2pt] (-0.4, 0.35) rectangle +(6.4, 0.7);
+%   \end{tikzpicture}
 }

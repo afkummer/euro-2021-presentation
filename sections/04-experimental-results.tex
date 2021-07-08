@@ -6,7 +6,7 @@
 
 
 \frame{
-   \frametitle{Instance dataset}
+   \frametitle{Instance datasets}
 
    \textbf{\citet{mankowska2014} dataset}
    \begin{itemize}
@@ -28,7 +28,7 @@
 }
 
 \frame{
-   \frametitle{Instance dataset}
+   \frametitle{Instance datasets}
 
    \textbf{\citet{mankowska2014} dataset}
 
@@ -59,6 +59,50 @@
 
 %   $^*$With preprocessing to skip generation of variables trivially set to 0.
 }
+
+\frame{
+   \frametitle{Instance datasets}
+
+   \textbf{New realistic benchmark dataset}
+   \begin{itemize}
+      \item Considering the characteristics of Porto Alegre
+      \item Realistic patient locations with OpenAddresses database
+      \item Realistic travel times with OpenStreetMaps and OpenSourceRoutingMachine
+      \item Modified version of \texttt{ovig} tool \citep{sartori2020-pdptw}
+   \end{itemize}
+}
+
+\frame{
+   \frametitle{Instance datasets}
+
+   \textbf{New realistic benchmark dataset}
+   \begin{itemize}
+      \item Similar to \citep{mankowska2014} dataset
+      \item Demands proportional to the available qualified manpower
+      \item Can be easily extended to generate weekly instances
+   \end{itemize}
+
+   \begin{table}[H]
+      \footnotesize
+      \begin{tabular}{lrr}
+         \toprule
+         Instance subset & $|\mathcal{V}|$ & $|\mathcal{C}|$\\
+         \midrule
+         A & 10 & 3\\
+         B & 25 & 4\\
+         C & 75 & 12\\
+         D & 100 & 16\\
+         E & 200 & 33\\
+         F & 300 & 50\\
+         G & 500 & 83\\
+         H & 700 & 116\\
+         I & 850 & 141\\
+         J & 1000 & 166\\
+         \bottomrule
+      \end{tabular}
+   \end{table}
+}
+
 
 %\frame{
 %   \frametitle{Benchmark machine}
@@ -495,35 +539,3 @@
 
 }
 
-\subsection*{Published results}
-
-\frame{
-   \frametitle{Articles and awards}
-
-   \textbf{Fix-and-optimize \emph{matheuristic}}
-   \begin{itemize}
-      \item SBPO: \citet{neto2019}
-      \item Roberto Diéguez Galvão: best symposium paper (2019)
-   \end{itemize}
-
-   \vspace*{12pt}
-
-   \textbf{BRKGA}
-   \begin{itemize}
-      \item GECCO'20: \citet{kummer2020}
-   \end{itemize}
-
-   \vspace*{12pt}
-
-   \textbf{EURO 2021 Athens:}
-   \begin{itemize}
-      \item Accepted abstract!
-   \end{itemize}
-
-   \vspace*{12pt}
-
-   \textbf{BRKGA-MP-IPR:}
-   \begin{itemize}
-      \item To be submitted
-   \end{itemize}
-}

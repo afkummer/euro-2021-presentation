@@ -101,6 +101,19 @@
    - Currently to check how well our proposed methods work on these daily instances
    - Can be extended for generating data within a time frame of a week
 
+- We have three major datasets
+   - Bredstrom and Ronquvist (2008), which comprises only simultaneous attendances
+      - hard tw
+      - patient prefereces to caregivers
+   - Mankowska
+      - Base problem of our work
+   - New instances using ovig generator
+      - Similar to mankowska, but using realistic data
+         - Regarding travel times
+         - Regarding patient locations
+         - Demands proportional to the number of qualified caregivers
+         - Overshooting of DS patients and more strict time windows
+
 
 
 # Questões para o Kallil
