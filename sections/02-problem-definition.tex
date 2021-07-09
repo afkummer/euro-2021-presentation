@@ -5,24 +5,77 @@
 \end{frame}
 
 \begin{frame}
-   \frametitle{Home Care in Porto Alegre}
+   \frametitle{Home care in Brazil}
 
-   \vspace*{8pt}
+   \textbf{Motivation: } Solve a real problem in Porto Alegre
+
+   \vspace{12pt}
 
    \textbf{Pilot program ``Better in Home''}
-   \footnotesize
    \begin{itemize}
-      \item Provides home hospitalization
+      \item Provider of home hospitalization
       \item Motivation: population growth and aging
-      \item 19 ``official'' teams
-      \item Additional support teams
+      \item Opportunity for \textbf{knowledge transfer}
+      \item Current approach: manual planning
    \end{itemize}
 
-   \begin{figure}[H]
-      \centering
-      \includegraphics[scale=0.15]{fig/melhor-em-casa.png}
-      \caption{Source: DATASUS (2021)}
-   \end{figure}
+   \begin{tikzpicture}[overlay]
+      \node (a) at (11.6,2) {
+         \includegraphics[scale=0.2]{fig/melhor-em-casa.png}
+      };
+      \node [below=1pt of a] {Source: DATASUS (2021)};
+   \end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+   \frametitle{Home care in Brazil}
+
+   \textbf{Pilot program ``Better in Home''}
+   \begin{itemize}
+      \item Program started in 2016
+      \item Experimental on some big Brazilian cities
+      \item Target population: patients eligible to home hospitalization
+   \end{itemize}
+
+   \begin{tikzpicture}[overlay]
+   \node (a) at (12.2,0) {
+      \includegraphics[scale=0.2]{fig/melhor-em-casa.png}
+   };
+   \node [below=1pt of a] {Source: DATASUS (2021)};
+   \end{tikzpicture}
+
+\end{frame}
+
+\begin{frame}
+   \frametitle{Home Care in Porto Alegre}
+
+   \textbf{Current problem and solution approach}
+   \begin{itemize}
+      \item 19 ``teams''
+      \item 300 patients per week
+      \item Most of the \textbf{planning is manual}, daily basis
+      \item One experienced caregiver
+   \end{itemize}
+
+
+\end{frame}
+
+\begin{frame}
+   \frametitle{Home Care in Porto Alegre}
+
+
+   \textbf{Three-step manual approach}
+   \begin{itemize}
+      \item Step 1: chooses the patient of the day
+      \item Step 2: assign the patients to the teams
+      \item Step 3: individual routing of the teams
+      \begin{itemize}
+         \item Done by the vehicle drive
+         \item Mostly a ``nearest neighbor'' strategy
+      \end{itemize}
+      \item ``Hope for the best'' strategy
+   \end{itemize}
+
 \end{frame}
 
 \begin{frame}
@@ -44,46 +97,43 @@
 \begin{frame}
    \frametitle{Home Care in Porto Alegre}
 
-   \textbf{Additional complicating demands}
+   \textbf{The problem is much more complex}
    \begin{itemize}
-      \item Simultaneous attendance in some patients
-      \item 19 teams, but only only \textcolor{InfRed}{\bfseries X} vehicles available
-      \item Equipment needs to be carried over according teams's planning
+      \item Uncertainty regarding patients $\Rightarrow$ re-scheduling
+      \item Less vehicles available than the number of teams
+      \item Equipment needs to be carried according teams's planning
       \item Selection of training medical student
    \end{itemize}
-
 \end{frame}
 
 \begin{frame}
-   \frametitle{Home Care in Porto Alegre}
-
-   \textbf{Problem dimensions}
-   \begin{itemize}
-      \item $\approx$ 300 patients per week
-      \item 19 teams
-      \item 5 days of operation (M--F)
-      \item Volume of medical students: unknown
-   \end{itemize}
-
-   \vspace*{12pt}
-
-   \textbf{Even more complicating issues}
-   \begin{itemize}
-      \item Uncertainty with patients
-      \item Rework of the teams
-   \end{itemize}
-
-\end{frame}
-
-\begin{frame}
-   \frametitle{Our target problem}
+   \frametitle{Choosing a target problem}
 
    \textbf{Our methodology}
    \begin{itemize}
-      \item Seeking for a \emph{core} optimization problem
-      \item Complex ``enough''
-      \item Not too much constrained/specific
+      \item Find, or propose a \textit{core} optimization problem
+      \item Complex enough
+      \begin{itemize}
+         \item Valuable for the practitioner
+         \item Interesting from the scientific perspective
+      \end{itemize}
+      \item But not too much constrained/specific
    \end{itemize}
+
+   \vspace*{18pt}
+  \pause
+
+
+   \textbf{Problem of choice: } The Home Health Care Routing \\
+   \qquad \qquad \qquad \qquad ~~~~ and Scheduling Problem (HHCRSP)
+
+
+   \begin{tikzpicture}[overlay]
+   \node (a) at (11.8,3) {
+      \includegraphics[scale=0.13]{fig/mankowska2014-paper.png}
+   };
+   \node [below=1pt of a] {\footnotesize \citet{mankowska2014}};
+   \end{tikzpicture}
 
 \end{frame}
 

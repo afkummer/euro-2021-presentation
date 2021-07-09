@@ -5,32 +5,27 @@
 \end{frame}
 
 \frame{
-   \frametitle{Logistic management for healthcare systems}
+   \frametitle{Home care systems}
 
    \textbf{Overview of HHCP}
    \begin{itemize}
-      \item First study from \citeyear{fernandez1974}
-      \item Home care: patients receive healthcare in their \emph{homes}
+      \item Studied since \citeyear{fernandez1974}
       \item Traditional systems: patients receive healthcare in \emph{hospitals}
+      \item Home care: patients receive healthcare in their \emph{homes}
    \end{itemize}
 
    \vspace*{18pt}
 
-   \begin{figure}[H]
-      \centering
-      \includegraphics[scale=0.15]{fig/fernandez-paper.png}
-   \end{figure}
-}
+   \pause
 
-\frame{
-   \frametitle{Logistic management for healthcare systems}
-
-   \textbf{Ease the access to health and social care services}
+    \textbf{Ease the access to health and social care services}
    \begin{itemize}
       \item More inclusive
       \item Alternative to nursing homes
       \item Leverage hospital beds for complex cases
    \end{itemize}
+
+   \pause
 
    \vspace*{12pt}
 
@@ -38,7 +33,7 @@
 }
 
 \frame{
-   \frametitle{Logistic management for healthcare systems}
+   \frametitle{Home care systems}
 
    \textbf{Core of home care problems}: A vehicle routing problem with additional constraints.
 
@@ -50,30 +45,6 @@
       \end{figure}
    }
 
-%   \only<+> {
-%      \begin{figure}[H]
-%         \includegraphics[width=0.8\textwidth, page=2]{fig/routing-example}%
-%      \end{figure}
-%   }
-%
-%   \only<+> {
-%      \begin{figure}[H]
-%         \includegraphics[width=0.8\textwidth, page=3]{fig/routing-example}%
-%      \end{figure}
-%   }
-%
-%   \only<+> {
-%      \begin{figure}[H]
-%         \includegraphics[width=0.8\textwidth, page=4]{fig/routing-example}%
-%      \end{figure}
-%   }
-%
-%   \only<+> {
-%      \begin{figure}[H]
-%         \includegraphics[width=0.8\textwidth, page=5]{fig/routing-example}%
-%      \end{figure}
-%   }
-
    \only<+> {
       \begin{figure}[H]
          \includegraphics[width=0.8\textwidth, page=6]{fig/routing-example}%
@@ -84,106 +55,80 @@
 %\frame{
 %   \frametitle{Logistic management for healthcare systems}
 %
-%   \textbf{Arriving challenge:} Efficient routing solution for caregivers to patient locations.
+%   \textbf{Increased life expectancy}
 %
+%   \only<1> {
 %   \begin{itemize}
-%      \item Reduces hospitalization costs
-%      \item Decentralized care
-%      \item Increases patients comfort
-%      \item Reduces patient stress and the pressure of mental health
+%      \item Population aging
+%      \item Exhaustion of public healthcare services
+%   \end{itemize}
+%   }
+%
+%
+%   \only<1,2> {
+%      \begin{figure}[H]
+%
+%         \subfloat[Brazil in 2010]{
+%            \includegraphics[width=0.25\textwidth]{fig/piramide-2010.png}
+%
+%         }
+%         \hfill
+%         \subfloat[Brazil in 2021]{
+%           \includegraphics[width=0.25\textwidth]{fig/piramide-2021.png}
+%
+%         }
+%         \hfill
+%         \subfloat[Brazil in 2050]{
+%            \includegraphics[width=0.25\textwidth]{fig/piramide-2050.png}
+%
+%         }
+%
+%         \caption{Source: Brazilian Institute of Geography and Statistics (2010)}
+%
+%      \end{figure}
+%   }
+%
+%   \only<2> {
+%      \footnotesize
+%      \begin{itemize}
+%         \item In 2010: \phantom{0}7.32\% (14M people)
+%         \item In 2021: 10.15\% (21M people)
+%         \item In 2050: \color{InfRed} 21.87\% (51M people)
+%      \end{itemize}
+%   }
+%}
+%
+%
+%\frame{
+%   \frametitle{Logistic management for healthcare systems}
+%
+%   \textbf{Covid-19 pandemic in Brazil}
+%   \begin{figure}[H]
+%      \subfloat[Total cases (\textasciitilde 14M)]{
+%         \includegraphics[width=0.3\textwidth]{fig/casos-covid}
+%      }
+%      \hspace*{40pt}
+%      \subfloat[Total deaths (\textasciitilde 378k)]{
+%         \includegraphics[width=0.3\textwidth]{fig/obitos-covid}
+%      }
+%      \caption{Source: DATASUS (2021)}
+%   \end{figure}
+%}
+%
+%\frame{
+%   \frametitle{Logistic management for healthcare systems}
+%
+%   \textbf{Covid-19 pandemic in Brazil}
+%   \begin{itemize}
+%      \item Lack of testing
+%      \item Lack of monitoring
+%   \end{itemize}
+%
+%   \vspace{12pt}
+%
+%   \textbf{But our public health system could be doing more}
+%   \begin{itemize}
+%      \item \emph{Better in Home}: pilot HHC program
+%      \item In Porto Alegre: vaccination through HHC structure
 %   \end{itemize}
 %}
-
-\frame{
-   \frametitle{Logistic management for healthcare systems}
-
-   \textbf{Increased life expectancy}
-
-   \only<1> {
-   \begin{itemize}
-      \item Population aging
-      \item Exhaustion of public healthcare services
-   \end{itemize}
-   }
-
-
-   \only<1,2> {
-      \begin{figure}[H]
-
-         \subfloat[Brazil in 2010]{
-            \includegraphics[width=0.25\textwidth]{fig/piramide-2010.png}
-
-         }
-         \hfill
-         \subfloat[Brazil in 2021]{
-           \includegraphics[width=0.25\textwidth]{fig/piramide-2021.png}
-
-         }
-         \hfill
-         \subfloat[Brazil in 2050]{
-            \includegraphics[width=0.25\textwidth]{fig/piramide-2050.png}
-
-         }
-
-         \caption{Source: Brazilian Institute of Geography and Statistics (2010)}
-
-      \end{figure}
-   }
-
-   \only<2> {
-%      \begin{figure}[H]
-%         \includegraphics[width=\textwidth]{fig/brazilian-pop-evol.png}
-%         \caption{Source: Brazilian Institute of Geography and Statistics (2010)}
-%      \end{figure}
-
-%      Estimated population over 65+ years:
-      \footnotesize
-      \begin{itemize}
-         \item In 2010: \phantom{0}7.32\% (14M people)
-         \item In 2021: 10.15\% (21M people)
-         \item In 2050: \color{InfRed} 21.87\% (51M people)
-      \end{itemize}
-   }
-}
-
-
-\frame{
-   \frametitle{Logistic management for healthcare systems}
-
-%   \begin{tikzpicture}[overlay]
-%   \node at (9.5,-0.3) {\includegraphics[scale=0.4]{fig/snapshot-covid}} ;
-%   \end{tikzpicture}
-%
-%   \vspace{4pt}
-
-   \textbf{Covid-19 pandemic in Brazil}
-   \begin{figure}[H]
-      \subfloat[Total cases (\textasciitilde 14M)]{
-         \includegraphics[width=0.3\textwidth]{fig/casos-covid}
-      }
-      \hspace*{40pt}
-      \subfloat[Total deaths (\textasciitilde 378k)]{
-         \includegraphics[width=0.3\textwidth]{fig/obitos-covid}
-      }
-      \caption{Source: DATASUS (2021)}
-   \end{figure}
-}
-
-\frame{
-   \frametitle{Logistic management for healthcare systems}
-
-   \textbf{Covid-19 pandemic in Brazil}
-   \begin{itemize}
-      \item Lack of testing
-      \item Lack of monitoring
-   \end{itemize}
-
-   \vspace{12pt}
-
-   \textbf{But our public health system could be doing more}
-   \begin{itemize}
-      \item \emph{Better in Home}: pilot HHC program
-%      \item Before the pandemic: weekly visit by health agents
-      \item In Porto Alegre: vaccination through HHC structure
-   \end{itemize}
-}

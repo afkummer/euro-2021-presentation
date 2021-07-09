@@ -4,38 +4,63 @@
    \sectionpage
 \end{frame}
 
+\frame{
+   \frametitle{Literature outline}
+
+   \textbf{Overview of HHCP}
+   \begin{itemize}
+      \item First study from \citeyear{fernandez1974}
+      \item Since 2006: +1 new publications per year
+      \item At least three major surveys
+   \end{itemize}
+
+   \begin{tikzpicture}[overlay]
+      \node at (12,1.3) {\includegraphics[scale=0.1]{fig/fernandez-paper.png}};
+   \end{tikzpicture}
+
+   \pause
+
+   \begin{figure}
+      \centering
+      \includegraphics[scale=0.1]{fig/fikar2017-paper.png}
+      \hspace{6pt}
+      \includegraphics[scale=0.11]{fig/cisse2017-paper.png}
+      \hspace{6pt}
+      \includegraphics[scale=0.12]{fig/grieco2020-paper.png}
+   \end{figure}
+}
+
 
 \frame{
    \frametitle{Literature outline}
 
    \textbf{In general}
    \begin{itemize}
-      \item Most publications approach \emph{only} the routing problem \citep{gutierrez2013,grieco2020}
-      \item Three surveys on routing problems arriving HHCP: \citet{fikar2017}, \citet{cisse2017}, and \citet{grieco2020}
-      \item This is also the case of this thesis proposal
+      \item Most publications approach \emph{only} the routing problem
+      \item Focuses on \textbf{home hospitalization}
+      \begin{itemize}
+         \item Survey: \citet{fikar2017}
+         \item Survey: \citet{cisse2017}
+      \end{itemize}
+      \item Other formats: first care, social care
+      \item HC involves \textbf{much more} than routing and scheduling
    \end{itemize}
 }
 
 \frame{
    \frametitle{Literature outline}
 
-   \textbf{HHC involves much more than routing and scheduling}
+   \textbf{The HC framework is much more complex}
    \begin{itemize}
-      \item Placement of operation centers
-      \item Choice of health and social services offered
-      \item Staffing and supplier selection
-      \item Fleet assignment and staff routing
-      \item Inventory management
+      \item Assess epidemiological profile of potential patients to:
+      \begin{itemize}
+         \item Choice of service types offered
+         \item Assessment of visit frequency
+         \item Hiring of personnel (staffing)
+         \item Routing (caregivers), and visit scheduling (patients)
+      \end{itemize}
    \end{itemize}
 
-    \vspace*{12pt}
-
-   \textbf{Lots of similarities with supply chain and task workforce problems \citep{ballou2007,castillo2016}}
-%   \begin{itemize}
-%      \item Strategical planning
-%      \item Tactical planning
-%      \item Operational planning
-%   \end{itemize}
 }
 
 \frame{
@@ -48,7 +73,7 @@
       level 1/.append style={level distance=5cm,sibling angle=120},
       level 2/.append style={level distance=3cm,sibling angle=45}]
 
-         \node{  Home Health Care Problem}
+         \node{  Home (Health) Care Problem}
          child [concept color=purple!50] { node {  Operational planning}
             child { node {Visit scheduling}}
             child { node {Staff routing}}
@@ -77,44 +102,45 @@
 }
 
 \frame{
-   \frametitle{Operational planning for the HHCP}
+   \frametitle{Operational planning for the HC}
 
-   \textbf{Basic definition as a routing problem}
+   \textbf{We also approach the operational planning}
    \begin{itemize}
-%      \item \citet{fernandez1974} studied the problem through statistics
-      \item Model introduced by \citet{cheng1998}
-%      \item Generalization of vehicle routing problem with time-windows \citep{akjiratikarl2007}
-      \item Travel times between all pairs of locations
-      \item Service times, patients time-windows
+      \item Basic VRPTW model \citep{cheng1998}
+      \item But no consensus regarding a \textit{standard} problem
+      \item No standard dataset
    \end{itemize}
 
+   \begin{tikzpicture}[overlay]
+   \node (a) at (11.8,1.3) {
+      \includegraphics[scale=0.12]{fig/cheng1998-paper.png}
+   };
+   \end{tikzpicture}
 }
 
-
-
-\frame{
-   \frametitle{Operational planning for the HHCP}
-
-   \textbf{Also a rich research subtopic}
-   \footnotesize
-   \begin{itemize}
-      \item Planning horizon length
-      \item Working regulations
-      \item {Preferences}
-      \item {Uncertainty}
-      \item Multiple services types
-      \item Multiple visits, operations synchronization
-      \item \citet{fikar2017}, \citet{cisse2017}, \citet{grieco2020}
-   \end{itemize}
-   \normalsize
-
-   \vspace*{12pt}
-
-   \textbf{Integrated approaches}
-   \footnotesize
-   \begin{itemize}
-      \item Fluctuation demands and temporary hiring \citep{eveborn2006}
-      \item Fleeting and operational planning \citep{fikar2018}
-   \end{itemize}
-   \normalsize
-}
+%\frame{
+%   \frametitle{Operational planning for the HHCP}
+%
+%   \textbf{Also a rich research subtopic}
+%   \footnotesize
+%   \begin{itemize}
+%      \item Planning horizon length
+%      \item Working regulations
+%      \item {Preferences}
+%      \item {Uncertainty}
+%      \item Multiple services types
+%      \item Multiple visits, operations synchronization
+%      \item \citet{fikar2017}, \citet{cisse2017}, \citet{grieco2020}
+%   \end{itemize}
+%   \normalsize
+%
+%   \vspace*{12pt}
+%
+%   \textbf{Integrated approaches}
+%   \footnotesize
+%   \begin{itemize}
+%      \item Fluctuation demands and temporary hiring \citep{eveborn2006}
+%      \item Fleeting and operational planning \citep{fikar2018}
+%   \end{itemize}
+%   \normalsize
+%}

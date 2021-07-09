@@ -128,3 +128,166 @@
 
 5. Seria possivel dar alguns exemplos de serviços oferecidos por home care?
 
+# Presentation planning
+
+- Intro slide
+- Presentation outline
+- Introduction
+   - A problem that is being studiend on the past 40 years
+   - Is applied in the context of providing healthcare access to the population
+   - Invert the role of patient and health providers
+- Literature review
+   - The first works is from the 1974
+      - Since 2006: at least one publication per year
+      - At least three major surveys on hc systems
+   - Most authors discuss the problem as a VRP with additional constraints
+      - Example of a routing problem
+      - But the HC topic is much more rich
+      - Because most authors discuss the problem of home hospitalization using HC
+      - But there are variations such as primary care and social care
+   - But the entire hhc framework is much more complex
+      - We have strategical, tactical and operational planning phases
+      - For example, we have the problem of demand estimation
+         - Access the epidemiological profile of population (STRAT,TACT)
+         - Choice of health services to be covered by HC system (STRAT,TACT)
+         - Hiring of professionals (TACT)
+         - Assess visit frequency (OPER)
+         - Routing caregivers and scheduling patient visits (OPER)
+   - We will be conservative
+      - We are focusing on the operational planning of HHC
+      - As mentioned before, a VRP with additional constraints and
+         - Several variations
+         - No standard dataset
+- Problem definition
+   - Motivation
+      - To solve a real problem in Brazil
+      - We have the "better in home" initiative
+      - Develop a system for Porto Alegre
+      - Knowledge transfer to practitioners
+   - The real problem in porto alegre I
+      - Started development in 2016
+      - Pilot program on big Brazilian cities
+      - Target of the system: patients eligible for home hospitalization
+   - The real problem in porto alegre II
+      - Currently in porto alegre we have 19 teams (viewed as a "vehicle")
+      - 300 patients serviced weekly
+      - But the planning is almost completely manual
+   - The real problem in porto alegre III
+      - A experienced caregiver takes most of the decisions
+      - Step 1: chooses the patients to be serviced each day
+      - Step 2: assign the patients for each team
+      - Step 3: individual routing of the teams
+         - Done by the driver of the vehicle
+         - Mostly follows a "nearest neighbor" approach
+   - The real problem in porto alegre IV
+      - Additional complicating needs
+         - Simultaneous attendance with "support" teams (no optimization done)
+         - Uncertainty regarding patients => rescheduling
+         - Less vehicles than teams : vehicle sharing!
+         - Loading of medical equipments
+         - Student of health sciences
+   - Our methodology
+      - To find, or either propose a "core" optimization problem
+      - Complex enough
+         - Valuable to the practictioner
+         - Valuable from scientific perspective
+      - But not too much constrainted/specific
+   - Our methodology
+      - The Home Health Care Routing and Scheduling Problem
+         - Routing of caregivers
+         - Scheduling of the visits
+      - A model and heuristics
+      - A public benchmark dataset
+      - Already tested by other authors
+   - Our methodology
+      - Still lacks some important features
+      - Uncertainty regarding service times
+      - Last minute changes on the availability of patients
+      - Current bottleneck: lack of a infrastructure to interact with the optimization algorithms
+   - In regarding the problem
+      - Single transportation mode
+      - Patient time-windows, soft tw ending
+      - Operations syncronization
+   - Operations synchronization
+      - Simultaneous attendance
+         - Both caregivers to be present to start both attendances simultaneously
+         - May incurr a waiting on the caregiver arriving earlier
+      - Precedence constraints
+         - Some services take priority over the others
+         - After servicing the higher priority service, then the other service can be performed
+   - Objective function
+- Proposed methods
+   - From the literature, we have
+      - Mankowska
+         - MIP model
+         - VNS-based meta-heuristic with deterministic moves
+      - Lasfargeas et al
+         - Several variations of a constructive heuristics
+         - Also a VNS-based meta-heuristic with randomized moves
+   - Proposed methods
+      - MIP-based methods
+         - Best lower bounds with CPLEX
+            - In makowksa, CPLEX 12.3 (2011)
+            - We used cplex 20.1 (dec 2020) with preprocessing routines to eliminate unnecessary variables and constraints
+         - Fix-and-optimize matheuristic  [2019]
+            - Uses the model from the literature
+            - MIP warmstart using mankowska constructive heuristic
+            - On each iteration:
+               - fix all routes
+               - then select two routes to be optimized
+               - run CPLEX up to 25 seconds
+            - stops after achieving local optima
+      - Indirect search methods
+         - Biased random key genetic algorithm
+         - Additional intensification components
+- Computational results
+   - Improved lower bounds
+      - For the entire dataset
+      - Literature: 10 hours of cplex
+      - Our experiment: 2 hours
+      - On instances up to 75 patients -> improvement of up 14%
+      - On large instances (300 patients) -> improvement of up to 37%
+   - Fix-and-optimize
+      - Up to 1.5 hours of runtime on the larger instances
+      - On instances up to 75 patients
+         - Mankowska: 930.3
+         - Lasfargeas: 854.3
+         - Matheuristic: 785.71
+      - On instances with 100 patients
+         - Mankowska: 1064.7
+         - Lasfargeas: ---
+         - Matheuristic: 863.74
+      - Instance with 200 and 300 patients: Matheuristic makes no progress
+   - GA
+      - Up to 20 minutes of execution
+      - On Instances up to 75 patients
+         - Mankowksa: 930.3
+         - Lasfargeas: 854.3
+         - Matheuristic: 785.71
+         - BRKGA: 791.5
+         - BRKGA+IC: 783.06
+      - On instances with 100 patients
+         - Mankowska: 1064.7
+         - Lasfargeas: ---
+         - Matheuristic: 863.74
+         - BRKGA: 845.50
+         - BRKGA+IC: 828.74
+      - On instances with 300 patients
+         - Mankowska: 2161.2
+         - Lasfargeas: ---
+         - Matheuristic: ---
+         - BRKGA: 1709.28
+         - BRKGA+IC: 1629.92
+- Conclusions
+   - HHC is a important topic
+   - Its relevance grows in front of global population aging
+   - Room for improvement of operations in Porto Alegre
+   - Empirical results indicates the advantages of the indirect search approach
+      - GA produces better results than most of other tested methods
+      - Fast when solving large instances
+      - Can be fine tweaked to other needs
+   - Future works
+      - Improve the GA decoder (less greedy)
+      - Include other practical requirements
+      - Strategy for re-scheduling in case of unexpected events
+      - Solution pool based algorithm
