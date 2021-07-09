@@ -140,6 +140,17 @@
 \begin{frame}
    \frametitle{Our target problem}
 
+   \textbf{Some missing characteristics}
+   \begin{itemize}
+      \item Uncertainty regarding attendance times
+      \item Last minute changes on the availability of patients
+      \item Current plan: knowledge transfer
+   \end{itemize}
+\end{frame}
+
+\begin{frame}
+   \frametitle{Our target problem}
+
    \textbf{The home health care routing and scheduling problem}
    \begin{itemize}
       \item HHCRSP was introduced by \citet{mankowska2014}
@@ -154,17 +165,6 @@
 
 \end{frame}
 
-\begin{frame}
-   \frametitle{Our target problem}
-
-   \textbf{On future interactions with HC managers}
-   \begin{itemize}
-      \item Uncertainty regarding attendance times
-      \item Last minute changes on the availability of patients
-      \item Current bottleneck: lack of infrastructure to interact with optimization algorithms
-      \item Export the algorithms and processes to other Brazilian cities
-   \end{itemize}
-\end{frame}
 
 \frame{
    \frametitle{The HHCRSP}
@@ -174,108 +174,10 @@
       \item Routing components
       \item Patient time-window
       \item Covered service types
-      \item Operations synchronization on multiple visits
-   \end{enumerate}
-}
-
-\frame{
-   \frametitle{The HHCRSP}
-
-   \textbf{Main characteristics}
-   \begin{enumerate}
-      \item \textcolor{InfRed}{Routing components}
-      \item Patient time-window
-      \item Covered service types
-      \item Operations synchronization on multiple visits
-   \end{enumerate}
-}
-
-\frame{
-   \frametitle{The HHCRSP: Routing features}
-   \textbf{Routing components}
-   \begin{itemize}
-      \item Single transportation mode
-      \item Routes start and finish at the depot
-      \item Travel time between locations
-      \item All visits must be performed
-   \end{itemize}
-
-%   \vspace*{12pt}
-
-   \begin{figure}
-      \includegraphics[width=0.7\textwidth,page=7]{fig/routing-example}
-   \end{figure}
-}
-
-\frame{
-   \frametitle{The HHCRSP}
-
-   \textbf{Main characteristics}
-   \begin{enumerate}
-      \item \onlyh{1}{InfRed}{Routing components}
-      \item \onlyh{2}{InfRed}{Patient time-window}
-      \item Covered service types
-      \item Operations synchronization on multiple visits
-   \end{enumerate}
-}
-
-\frame{
-   \frametitle{The HHCRSP: Routing features}
-   \textbf{Soft time-window}
-   \begin{itemize}
-      \item Each patient/node has a time-window
-      \item ``Hard'' time-window start
-      \item ``Soft'' time-window ending
-      \item Violated time-window ending: incurs additional cost
-   \end{itemize}
-
-   \begin{figure}[H]
-      \includegraphics[width=0.6\textwidth]{fig/tw-penal.pdf}
-   \end{figure}
-}
-
-\frame{
-   \frametitle{The HHCRSP}
-
-   \textbf{Main characteristics}
-   \begin{enumerate}
-      \item Routing components
-      \item \onlyh{1}{InfRed}{Patient time-window}
-      \item \onlyh{2}{InfRed}{Covered service types}
-      \item Operations synchronization on multiple visits
-   \end{enumerate}
-}
-
-\frame{
-   \frametitle{The HHCRSP: domain features}
-
-   \textbf{Covered service types}
-   \begin{itemize}
-      \item Set $\Sk$ of offered services
-      \item A patient can require \textit{one}, or \textit{two services}
-      \item Each service requested has a \textit{processing time}
-      \item Caregivers have \textit{qualification} to perform only a few service types
-   \end{itemize}
-
-   \vspace*{8pt}
-
-    \begin{figure}[H]
-      \includegraphics[width=0.9\textwidth]{fig/skilled}
-   \end{figure}
-
-}
-
-\frame{
-   \frametitle{The HHCRSP}
-
-   \textbf{Main characteristics}
-   \begin{enumerate}
-      \item Routing components
-      \item Patient time-window
-      \item \onlyh{1}{InfRed}{Covered service types}
       \item \onlyh{2}{InfRed}{Operations synchronization on multiple visits}
    \end{enumerate}
 }
+
 
 
 \begin{frame}
@@ -321,17 +223,6 @@
       \centering
       \includegraphics[width=0.6\textwidth,page=2]{fig/sync-tsn2}
    \end{figure}
-\end{frame}
-
-\begin{frame}
-   \frametitle{The HHCRSP: some formal definitions}
-   \textbf{Main sets}
-   \begin{itemize}
-      \item $\mathcal{V}$ : Vehicles/caregivers
-      \item $\mathcal{C}$ : Patients/nodes
-      \item $\mathcal{S}$ : Service types/skills
-   \end{itemize}
-
 \end{frame}
 
 \frame{
