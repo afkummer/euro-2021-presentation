@@ -5,17 +5,17 @@
 \end{frame}
 
 
-\frame{
-   \frametitle{Instance datasets}
-
-   \textbf{\citet{mankowska2014} dataset}
-   \begin{itemize}
-      \item Euclidean distances within a $100 \times 100$ square region
-      \item Time-windows of 2 hours
-      \item Total of 70 instances available
-      \item 30\% of patients require operations synchronization
-   \end{itemize}
-}
+%\frame{
+%   \frametitle{Instance datasets}
+%
+%   \textbf{\citet{mankowska2014} dataset}
+%   \begin{itemize}
+%      \item Euclidean distances within a $100 \times 100$ square region
+%      \item Time-windows of 2 hours
+%      \item Total of 70 instances available
+%      \item 30\% of patients require operations synchronization
+%   \end{itemize}
+%}
 
 \frame{
    \frametitle{Instance datasets}
@@ -51,23 +51,29 @@
 \frame{
    \frametitle{Comparison of results}
 
-   \textbf{Fix and optimize matheuristic}: Runtime up to 1.5h
+   \textbf{Fix and optimize matheuristic} \citep{neto2019}
    \begin{itemize}
+      \pause
       \item Instances with 75 patients
       \begin{itemize}
-         \item Mankowska: 930.3
-         \item Lasfargeas: 854.3
+         \item Mankowska: 930.3 \only<3->{\textcolor{InfRed}{(-15.54\%)}}
+         \item Lasfargeas: 854.3 \only<4->{\textcolor{InfRed}{(-8.03\%)}}
          \item Matheuristic: \textcolor{red}{785.71}
       \end{itemize}
+      \pause
+      \pause
+      \pause
       \item Instances with 100 patients
       \begin{itemize}
-         \item Mankowska: 1064.7
+         \item Mankowska: 1064.7 \only<6->{\textcolor{InfRed}{(-18.88\%)}}
          \item Lasfargeas: --
          \item Matheuristic: \textcolor{red}{863.74}
       \end{itemize}
    \end{itemize}
 
    \vspace*{12pt}
+   \pause
+   \pause
 
    \textbf{Instance with 200 and 300 patients:} Matheuristic makes no progress
 }
@@ -75,15 +81,35 @@
 \frame{
    \frametitle{Comparison of results}
 
-   \textbf{Genetic algorithm}: Runtime up to 20 minutes
+   \textbf{Genetic algorithm} \citep{kummer2020}
    \begin{itemize}
       \only<+>{
          \item Instances with \textbf{75 patients}
          \begin{itemize}
             \item Mankowska: 930.3
             \item Lasfargeas: 854.3
-            \item Matheuristic: \textcolor{red}{785.71}
-            \item BRKGA: 791.5
+            \item Matheuristic: 785.71
+            \item BRKGA: \textcolor{blue}{791.5}
+            \item BRKGA+IC: \textcolor{red}{783.06}
+         \end{itemize}
+      }
+      \only<+>{
+         \item Instances with \textbf{75 patients}
+         \begin{itemize}
+            \item Mankowska: 930.3 \textcolor{InfRed}{(-15.83\%)}
+            \item Lasfargeas: 854.3 \textcolor{InfRed}{(-8.34\%)}
+            \item Matheuristic: 785.71 \textcolor{InfRed}{(-0.34\%)}
+            \item BRKGA: \textcolor{blue}{791.5}
+            \item BRKGA+IC: \textcolor{red}{783.06}
+         \end{itemize}
+      }
+      \only<+>{
+         \item Instances with \textbf{75 patients}
+         \begin{itemize}
+            \item Mankowska: 930.3 \textcolor{InfRed}{(-15.83\%)}
+            \item Lasfargeas: 854.3 \textcolor{InfRed}{(-8.34\%)}
+            \item Matheuristic: 785.71 \textcolor{InfRed}{(-0.34\%)}
+            \item BRKGA: \textcolor{blue}{791.5} \textcolor{InfRed}{(-1.07\%)}
             \item BRKGA+IC: \textcolor{red}{783.06}
          \end{itemize}
       }
@@ -93,7 +119,17 @@
             \item Mankowska: 1064.7
             \item Lasfargeas: --
             \item Matheuristic: 863.74
-            \item BRKGA: 845.50
+            \item BRKGA: \textcolor{blue}{845.50}
+            \item BRKGA+IC: \textcolor{InfRed}{828.74}
+         \end{itemize}
+      }
+      \only<+> {
+         \item Instances with \textbf{100 patients}
+         \begin{itemize}
+            \item Mankowska: 1064.7 \textcolor{InfRed}{(-22.16\%)}
+            \item Lasfargeas: --
+            \item Matheuristic: 863.74  \textcolor{InfRed}{(-4.05\%)}
+            \item BRKGA: \textcolor{blue}{845.50}  \textcolor{InfRed}{(-1.98\%)}
             \item BRKGA+IC: \textcolor{InfRed}{828.74}
          \end{itemize}
       }
@@ -104,6 +140,16 @@
             \item Lasfargeas: --
             \item Matheuristic: --
             \item BRKGA: 1709.28
+            \item BRKGA+IC: \textcolor{InfRed}{1629.92}
+         \end{itemize}
+      }
+      \only<+> {
+         \item Instances with \textbf{300 patients}
+         \begin{itemize}
+            \item Mankowska: 2161.2 \textcolor{InfRed}{(-24.58\%)}
+            \item Lasfargeas: --
+            \item Matheuristic: --
+            \item BRKGA: 1709.28  \textcolor{InfRed}{(-4.64\%)}
             \item BRKGA+IC: \textcolor{InfRed}{1629.92}
          \end{itemize}
       }

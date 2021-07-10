@@ -7,6 +7,25 @@
 \begin{frame}
    \frametitle{Home care in Brazil}
 
+   \textbf{Pilot program ``Better in Home''}
+   \begin{itemize}
+      \item Program started in 2016
+      \item Experimental on some big Brazilian cities
+      %      \item Target population: patients eligible to home hospitalization
+   \end{itemize}
+
+   \begin{tikzpicture}[overlay]
+   \node (a) at (12.2,0) {
+      \includegraphics[scale=0.2]{fig/melhor-em-casa.png}
+   };
+   \node [below=1pt of a] {Source: DATASUS (2021)};
+   \end{tikzpicture}
+
+\end{frame}
+
+\begin{frame}
+   \frametitle{Home care in Brazil}
+
    \textbf{Motivation: } Solve a real problem in Porto Alegre
 
    \vspace{12pt}
@@ -28,30 +47,11 @@
 \end{frame}
 
 \begin{frame}
-   \frametitle{Home care in Brazil}
-
-   \textbf{Pilot program ``Better in Home''}
-   \begin{itemize}
-      \item Program started in 2016
-      \item Experimental on some big Brazilian cities
-      \item Target population: patients eligible to home hospitalization
-   \end{itemize}
-
-   \begin{tikzpicture}[overlay]
-   \node (a) at (12.2,0) {
-      \includegraphics[scale=0.2]{fig/melhor-em-casa.png}
-   };
-   \node [below=1pt of a] {Source: DATASUS (2021)};
-   \end{tikzpicture}
-
-\end{frame}
-
-\begin{frame}
    \frametitle{Home Care in Porto Alegre}
 
    \textbf{Current problem and solution approach}
    \begin{itemize}
-      \item 19 ``teams''
+      \item 19 teams (team = car driver + a skilled physician)
       \item 300 patients per week
       \item Most of the \textbf{planning is manual}, daily basis
       \item One experienced caregiver
@@ -81,28 +81,12 @@
 \begin{frame}
    \frametitle{Home Care in Porto Alegre}
 
-   \vspace*{8pt}
-
-   \textbf{Currently solved manually}
-   \begin{itemize}
-      \item Patient demands are set weekly
-      \item The (manual) planning done daily
-      \item First step: choice of patients of the day
-      \item Second step: patient-team assignment
-      \item Third step: individual routing by each team
-   \end{itemize}
-
-\end{frame}
-
-\begin{frame}
-   \frametitle{Home Care in Porto Alegre}
-
    \textbf{The problem is much more complex}
    \begin{itemize}
       \item Uncertainty regarding patients $\Rightarrow$ re-scheduling
       \item Less vehicles available than the number of teams
       \item Equipment needs to be carried according teams's planning
-      \item Selection of training medical student
+%      \item Selection of training medical student
    \end{itemize}
 \end{frame}
 
@@ -153,7 +137,7 @@
 
    \textbf{The home health care routing and scheduling problem}
    \begin{itemize}
-      \item HHCRSP was introduced by \citet{mankowska2014}
+%      \item HHCRSP was introduced by \citet{mankowska2014}
       \item Routing (caregivers) and scheduling (visit time)
       \item A model, and heuristics
       \item A public standard benchmark dataset
@@ -178,52 +162,66 @@
    \end{enumerate}
 }
 
+%
+%
+%\begin{frame}
+%   \frametitle{The HHCRSP: domain features}
+%   \textbf{Operations synchronization on double service patients}
+%   \begin{itemize}
+%      \item Special requirement for patients requiring two service types
+%      \item Services must start simultaneously in some patients
+%      \item Others have precedence constraints
+%      \item Common feature container allocation/transshipment problems \citep{drexl2012synchronization}
+%   \end{itemize}
+%
+%%   \vspace*{8pt}
+%
+%   \begin{figure}[H]
+%      \includegraphics[width=1\textwidth,page=2]{fig/skilled}
+%   \end{figure}
+%
+%\end{frame}
 
-
-\begin{frame}
-   \frametitle{The HHCRSP: domain features}
-   \textbf{Operations synchronization on double service patients}
+\frame{
+   \frametitle{The HHCRSP}
+   \textbf{Multiple visit operations synchronization}
    \begin{itemize}
-      \item Special requirement for patients requiring two service types
-      \item Services must start simultaneously in some patients
-      \item Others have precedence constraints
-      \item Common feature container allocation/transshipment problems \citep{drexl2012synchronization}
+      \item Simultaneous attendance
+      \item Precedence constraints + separation time window
    \end{itemize}
-
-%   \vspace*{8pt}
 
    \begin{figure}[H]
       \includegraphics[width=1\textwidth,page=2]{fig/skilled}
    \end{figure}
 
-\end{frame}
+}
 
-\begin{frame}
-   \frametitle{The HHCRSP: Own characteristics}
-   \textbf{Double service: precedence order}
-   \begin{itemize}
-      \item Service precedence: 2 > 5
-      \item ($\delta^\mathrm{min}$) and ($\delta^\mathrm{max}$): separation time
-   \end{itemize}
-
-   \begin{figure}
-      \centering
-      \includegraphics[width=0.6\textwidth,page=1]{fig/sync-tsn2}
-   \end{figure}
-\end{frame}
-
-\begin{frame}
-   \frametitle{The HHCRSP: Own characteristics}
-   \textbf{Double service: parallel attendance}
-   \begin{itemize}
-      \item Services must start simultaneously
-   \end{itemize}
-
-   \begin{figure}
-      \centering
-      \includegraphics[width=0.6\textwidth,page=2]{fig/sync-tsn2}
-   \end{figure}
-\end{frame}
+%\begin{frame}
+%   \frametitle{The HHCRSP: Own characteristics}
+%   \textbf{Double service: precedence order}
+%   \begin{itemize}
+%      \item Service precedence: 2 > 5
+%      \item ($\delta^\mathrm{min}$) and ($\delta^\mathrm{max}$): separation time
+%   \end{itemize}
+%
+%   \begin{figure}
+%      \centering
+%      \includegraphics[width=0.6\textwidth,page=1]{fig/sync-tsn2}
+%   \end{figure}
+%\end{frame}
+%
+%\begin{frame}
+%   \frametitle{The HHCRSP: Own characteristics}
+%   \textbf{Double service: parallel attendance}
+%   \begin{itemize}
+%      \item Services must start simultaneously
+%   \end{itemize}
+%
+%   \begin{figure}
+%      \centering
+%      \includegraphics[width=0.6\textwidth,page=2]{fig/sync-tsn2}
+%   \end{figure}
+%\end{frame}
 
 \frame{
    \frametitle{The HHCRSP: some formal definitions}

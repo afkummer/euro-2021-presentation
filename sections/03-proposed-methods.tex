@@ -23,20 +23,20 @@
    \end{itemize}
 }
 
-\frame{
-   \frametitle{MIP-based methods}
-
-   \textbf{Lower bounds with CPLEX}
-   \begin{itemize}
-      \item In \citet{mankowska2014}, CPLEX 12.3 --- June, 2011
-      \item Our experiment: CPLEX 20.1 --- December, 2020
-      \begin{itemize}
-         \item Pre-processing
-         \item Parameter setting
-         \item MIP warmstart
-      \end{itemize}
-   \end{itemize}
-}
+%\frame{
+%   \frametitle{MIP-based methods}
+%
+%   \textbf{Lower bounds with CPLEX}
+%   \begin{itemize}
+%      \item In \citet{mankowska2014}: CPLEX 12.3 --- June, 2011
+%      \item Our experiment: CPLEX 20.1 --- December, 2020
+%      \begin{itemize}
+%         \item Pre-processing
+%         \item Parameter setting
+%         \item MIP warmstart
+%      \end{itemize}
+%   \end{itemize}
+%}
 
 \frame{
    \frametitle{MIP-based methods}
@@ -55,11 +55,11 @@
 
    \textbf{Local search-based methods can be expensive}
    \begin{itemize}
-      \item Tricks to reduce work for evaluating some moves
+      \item Tricks from VRPTW literature reduce effort of evaluating moves
       \item But the synchronization constraints are too impacting
       \begin{itemize}
          \item Clever solution representation \citep{mankowska2014, lasfargeas2019}
-         \item Optimized moves, ahead detection of cross-synchronization
+         \item Optimized moves, ahead detection of cross-synchronization \citep{decerle2018,liu2019adaptive}
       \end{itemize}
    \end{itemize}
 
@@ -94,15 +94,19 @@
 
    \textbf{For the home health care problem}
    \begin{itemize}
-      \item BRKGA $\Rightarrow$ evolves the \emph{task insertion sequence}
-      \item The proposed decoder \textbf{embeds} a greedy heuristic
-      \item A \emph{best-insertion heuristic decoder} builds a routing solution from the TIS
+      \item BRKGA $\Rightarrow$ gives a \textit{permutation} of the patients/nodes
+      \item The proposed decoder \textit{embeds} a greedy heuristic
+      \item A \emph{best-insertion heuristic decoder} builds a routing solution from the permutation
    \end{itemize}
 
-   \vspace*{12pt}
+%   \vspace*{12pt}
 
-   \begin{figure}
-      \includegraphics[width=0.5\textwidth]{fig/decoder-tis}
-   \end{figure}
+%   \textbf{In short:} TAS $\approx$ permutation of nodes
+
+
+
+%   \begin{figure}
+%      \includegraphics[width=0.5\textwidth]{fig/decoder-tis}
+%   \end{figure}
 }
 
