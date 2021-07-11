@@ -10,7 +10,8 @@
    \textbf{Pilot program ``Better in Home''}
    \begin{itemize}
       \item Program started in 2016
-      \item Experimental on some big Brazilian cities
+      \item Implemented in some big Brazilian cities
+      \item Provides home hospitalization
       %      \item Target population: patients eligible to home hospitalization
    \end{itemize}
 
@@ -28,11 +29,11 @@
 
    \textbf{Motivation: } Solve a real problem in Porto Alegre
 
-   \vspace{12pt}
-
-   \textbf{Pilot program ``Better in Home''}
+%   \vspace{12pt}
+%
+%   \textbf{Pilot program ``Better in Home''}
    \begin{itemize}
-      \item Provider of home hospitalization
+
 %      \item Motivation: population growth and aging
       \item Opportunity for \textbf{knowledge transfer}
       \item Current approach: manual planning
@@ -78,17 +79,17 @@
 
 \end{frame}
 
-\begin{frame}
-   \frametitle{Home Care in Porto Alegre}
-
-   \textbf{The problem is much more complex}
-   \begin{itemize}
-      \item Uncertainty regarding patients $\Rightarrow$ re-scheduling
-      \item Less vehicles available than the number of teams
-      \item Equipment needs to be carried according teams's planning
-%      \item Selection of training medical student
-   \end{itemize}
-\end{frame}
+%\begin{frame}
+%   \frametitle{Home Care in Porto Alegre}
+%
+%   \textbf{The problem is much more complex}
+%   \begin{itemize}
+%      \item Uncertainty regarding patients $\Rightarrow$ re-scheduling
+%      \item Less vehicles available than the number of teams
+%      \item Equipment needs to be carried according teams's planning
+%%      \item Selection of training medical student
+%   \end{itemize}
+%\end{frame}
 
 \begin{frame}
    \frametitle{Choosing a target problem}
@@ -121,16 +122,16 @@
 
 \end{frame}
 
-\begin{frame}
-   \frametitle{Our target problem}
-
-   \textbf{Some missing characteristics}
-   \begin{itemize}
-      \item Uncertainty regarding attendance times
-      \item Last minute changes on the availability of patients
-      \item Current plan: knowledge transfer
-   \end{itemize}
-\end{frame}
+%\begin{frame}
+%   \frametitle{Our target problem}
+%
+%   \textbf{Some missing characteristics}
+%   \begin{itemize}
+%      \item Vehicle allocation
+%      \item Medical equipment allocation
+%      \item Starting point for knowledge transfer
+%   \end{itemize}
+%\end{frame}
 
 \begin{frame}
    \frametitle{Our target problem}
@@ -182,67 +183,67 @@
 %
 %\end{frame}
 
-\frame{
-   \frametitle{The HHCRSP}
-   \textbf{Multiple visit operations synchronization}
+%\frame{
+%   \frametitle{The HHCRSP}
+%   \textbf{Multiple visit operations synchronization}
+%   \begin{itemize}
+%      \item Simultaneous attendance
+%      \item Precedence constraints + separation time window
+%   \end{itemize}
+%
+%   \begin{figure}[H]
+%      \includegraphics[width=1\textwidth,page=2]{fig/skilled}
+%   \end{figure}
+%
+%}
+
+\begin{frame}
+   \frametitle{The HHCRSP: Own characteristics}
+   \textbf{Double service: precedence order}
    \begin{itemize}
-      \item Simultaneous attendance
-      \item Precedence constraints + separation time window
+      \item Service precedence: 2 > 5
+      \item ($\delta^\mathrm{min}$) and ($\delta^\mathrm{max}$): separation time
    \end{itemize}
 
-   \begin{figure}[H]
-      \includegraphics[width=1\textwidth,page=2]{fig/skilled}
+   \begin{figure}
+      \centering
+      \includegraphics[width=0.6\textwidth,page=1]{fig/sync-tsn2}
    \end{figure}
+\end{frame}
 
-}
+\begin{frame}
+   \frametitle{The HHCRSP: Own characteristics}
+   \textbf{Double service: parallel attendance}
+   \begin{itemize}
+      \item Services must start simultaneously
+   \end{itemize}
 
-%\begin{frame}
-%   \frametitle{The HHCRSP: Own characteristics}
-%   \textbf{Double service: precedence order}
-%   \begin{itemize}
-%      \item Service precedence: 2 > 5
-%      \item ($\delta^\mathrm{min}$) and ($\delta^\mathrm{max}$): separation time
-%   \end{itemize}
-%
-%   \begin{figure}
-%      \centering
-%      \includegraphics[width=0.6\textwidth,page=1]{fig/sync-tsn2}
-%   \end{figure}
-%\end{frame}
-%
-%\begin{frame}
-%   \frametitle{The HHCRSP: Own characteristics}
-%   \textbf{Double service: parallel attendance}
-%   \begin{itemize}
-%      \item Services must start simultaneously
-%   \end{itemize}
-%
-%   \begin{figure}
-%      \centering
-%      \includegraphics[width=0.6\textwidth,page=2]{fig/sync-tsn2}
-%   \end{figure}
-%\end{frame}
+   \begin{figure}
+      \centering
+      \includegraphics[width=0.6\textwidth,page=2]{fig/sync-tsn2}
+   \end{figure}
+\end{frame}
 
 \frame{
    \frametitle{The HHCRSP: some formal definitions}
 
    \textbf{Objective function}
 
-   \only<1> {
-      \begin{gather}
-         \mathrm{Minimize~} \lambda_1 D \; +
-         \lambda_2 T \; +
-         \lambda_3 T^\mathit{max} \nonumber
-      \end{gather}
-   }
+%   \only<1> {
+%      \begin{gather}
+%         \mathrm{Minimize~} \lambda_1 D \; +
+%         \lambda_2 T \; +
+%         \lambda_3 T^\mathit{max} \nonumber
+%      \end{gather}
+%   }
 
-   \only<2> {
+%   \only<1> {
       \begin{gather}
       \mathrm{Minimize~}\color{InfRed} \lambda_1 \normalcolor D \; +
       \color{green} \lambda_2 \normalcolor T \; +
       \color{blue} \lambda_3 \normalcolor T^\mathit{max} \nonumber
       \end{gather}
-   }
+%   }
 
    \vspace*{12pt}
 

@@ -22,6 +22,8 @@
 
    \textbf{\citet{mankowska2014} dataset}
 
+   \vspace*{12pt}
+
    \begin{table}[H]
       \centering
       \footnotesize
@@ -48,6 +50,81 @@
    Ten instances for each subset.
 }
 
+\frame{
+   \frametitle{Comparison of results}
+   \textbf{Fix and optimize} \citep{neto2019}
+
+   \vspace*{12pt}
+
+   \begin{table}[H]
+      \tiny
+      \begin{tabular}{lr@{\hspace*{20pt}}rr@{\hspace*{20pt}}rr@{\hspace*{20pt}}rrr}
+         \toprule
+         \multicolumn{2}{c}{Instance} &
+         \multicolumn{2}{c}{Mankowska} &
+         \multicolumn{2}{c}{Lasfargeas} &
+         \multicolumn{3}{c}{Fix and optimize}\\
+         \midrule
+
+         Subset & \# p. &
+         Cost & Time &
+         Cost  & Time &
+         Initial & Cost & Time \\% & Improv. (\%)\\
+         \midrule
+
+         A & 10 & \textbf{225.19} & 5.2 & \textbf{225.19} & <1 & 275.75 & \textbf{225.19} & 0.54 \\% & 16.76 \\
+         B & 25 & 445.36 & <1 & 411.18 & 48.01 & 936.38 & \textbf{407.43} & 114.32 \\% & 51.43 \\
+         C & 50 & 713.24 & <1 & 636.2 & 109.02 & 1705.86 & \textbf{622.12} & 532.42 \\% & 53.77 \\
+         D & 75 & 930.32 & 6 & 854.02 & 156.75 & 1891.81 & \textbf{785.51} & 1475.85 \\% & 53.71 \\
+         E & 100 & 1057.62 & 33 & -- & -- & 1856.64 & \textbf{863.74} & 4643.83 \\% & 51.57 \\
+         F & 200 & \textbf{1587.96} & 1115 & -- & -- & 2524.49 & 2454.97 & 5501.20 \\% & 2.67 \\
+         G & 300 & \textbf{2161.24} & 7133 & -- & -- & 4278.32 & 4278.32 & 4301.84 \\% & 0.00 \\
+         \bottomrule
+      \end{tabular}
+   \end{table}
+}
+
+\frame{
+   \frametitle{Comparison of results}
+
+   \textbf{Genetic Algorithm} \citep{kummer2020}
+
+   \vspace*{12pt}
+
+\begin{table}[H]
+   \tiny
+   \begin{tabular}{lr@{\hspace*{20pt}}rr@{\hspace*{20pt}}rr@{\hspace*{20pt}}rrrrrrr}
+      \toprule
+      \multirow{2}[2]{*}{Instance} &
+      \multicolumn{2}{c}{Mankowska} &
+      \multicolumn{2}{c}{Lasfargeas} &
+      \multicolumn{2}{c}{Fix and optimize} &
+      \multicolumn{2}{c}{BRKGA} &
+      \multicolumn{2}{c}{BRKGA+IC}\\
+
+      \cmidrule(l){2-11}
+
+       & Cost & Time &
+      Cost  & Time &
+      Cost & Time &
+      Cost & Time &
+      Cost & Time \\% & Improv. (\%)\\
+      \midrule
+
+      A & \textbf{225.19} & 5.2 & \textbf{225.19} & <1 & \textbf{225.19} & 0.54 & 227.51 & 0.72 & 227.511 & 97.18 \\
+      B & 445.36 & <1 & 411.18 & 48.01 & \textbf{407.43} & 114.32 & 413.86 & 1.92 & 413.86 & 104.78 \\
+      C & 713.24 & <1 & 636.2 & 109.02 & \textbf{622.12} & 532.42 & 629.05 & 5.87 & 625.88 & 129.37 \\
+      D & 930.32 & 6 & 854.02 & 156.75 & 785.51 & 1475.85 & 791.55 & 13.20 & \textbf{783.06} & 164.34 \\
+      E & 1057.62 & 33 & -- & -- & 863.74 & 4643.83 & 845.50 & 23.94 & \textbf{828.74} & 217.80 \\
+      F & 1587.96 & 1115 & -- & -- & 2454.97 & 5501.20 & 1271.24 & 97.74 & \textbf{1231.54} & 569.20 \\
+      G & 2161.24 & 7133 & -- & -- & 4278.32 & 4301.84 & 1709.28 & 229.20 & \textbf{1629.92} & 1209.60 \\
+      \bottomrule
+   \end{tabular}
+\end{table}
+
+}
+
+\begin{comment}
 \frame{
    \frametitle{Comparison of results}
 
@@ -77,6 +154,7 @@
 
    \textbf{Instance with 200 and 300 patients:} Matheuristic makes no progress
 }
+
 
 \frame{
    \frametitle{Comparison of results}
@@ -155,3 +233,4 @@
       }
    \end{itemize}
 }
+\end{comment}
