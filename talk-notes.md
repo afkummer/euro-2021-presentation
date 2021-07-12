@@ -1,4 +1,4 @@
-## ## S1
+## S1
 Thank you, professor Helena.
 Hi everyone, my name is Alberto Kummer. I am a Ph.D. Candidate on the Federal University of Rio Grande do Sul, in Brazil, and I will present our work titled "solving the single-day home health care problem with route interdependencies."
 
@@ -174,12 +174,12 @@ In conclusion, home care problems are a very complex and very interesting resear
 
 And regarding the system of Porto Alegre, we see a large room for improvement in the home care operations. Currently, we are generating realistic instances based on our knowledge regarding the Porto Alegre system to test how well our solution methods would solve a real case.
 
-S40
+## S40
 We want to improve our genetic algorithm's decoder in future works to have a better of some greedy decisions it made.
 
 And we also want to model other practical requirements of Porto Alegre's system and propose methods to deal with the rescheduling needs.
 
-S41
+## S41
 So these are the references we use in this presentation.
 
 ***
